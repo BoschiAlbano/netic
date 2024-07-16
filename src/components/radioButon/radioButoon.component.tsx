@@ -8,7 +8,8 @@ const RadioButoonComponent = () => {
                     type="radio"
                     className="radio-button__input"
                     id="radio1"
-                    name="radio-group"
+                    name="Plan"
+                    defaultValue={50}
                 />
                 <label className="radio-button__label" htmlFor="radio1">
                     <span className="radio-button__custom"></span>
@@ -20,7 +21,8 @@ const RadioButoonComponent = () => {
                     type="radio"
                     className="radio-button__input"
                     id="radio2"
-                    name="radio-group"
+                    name="Plan"
+                    defaultValue={100}
                 />
                 <label className="radio-button__label" htmlFor="radio2">
                     <span className="radio-button__custom"></span>
@@ -32,7 +34,8 @@ const RadioButoonComponent = () => {
                     type="radio"
                     className="radio-button__input"
                     id="radio3"
-                    name="radio-group"
+                    name="Plan"
+                    defaultValue={200}
                 />
                 <label className="radio-button__label" htmlFor="radio3">
                     <span className="radio-button__custom"></span>

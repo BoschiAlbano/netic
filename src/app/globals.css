@@ -296,7 +296,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .form-control input:focus,
-.form-control input:valid {
+.form-control input:not(:placeholder-shown) {
     outline: 0;
     border-bottom-color: var(--Color3);
     padding: 15px 0 5px 5px;
@@ -321,7 +321,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .form-control input:focus + label span,
-.form-control input:valid + label span {
+.form-control input:not(:placeholder-shown) + label span {
     color: var(--Color1);
     transform: translateY(-20px);
     font-size: 14px;

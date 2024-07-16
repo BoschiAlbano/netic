@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+// Esquemas
+
+model contratar {
+  id String @id @default(cuid())
+  Nombre String
+  DNI BigInt @unique
+  Telefono BigInt
+  Calle String
+  Numero BigInt
+  Casa String?
+  Plan BigInt
+}
+
+// #### Data Base First ####
+// Generar los modelos, con bd que ya existe
+// npx prisma db pull
+
+
+// #### Code First ####
+// Generar las migraciones
+//     npx prisma migrate dev --name Inicial
+// por cada migracion que se haga usamos
+//     npx prisma generate
+// para actualizar el cliente de PrismaClient

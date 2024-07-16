@@ -6,14 +6,16 @@ const InputComponent = ({
     name = "null",
     type = "value",
     defaultValue = "",
+    required = true,
 }) => {
     return (
         <div className=" w-full form-control">
             <input
                 type={type}
-                required={true}
+                required={required}
                 name={name}
                 defaultValue={defaultValue}
+                placeholder=""
             />
             <label>
                 {palabra.split("").map((letra, index) => {

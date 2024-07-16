@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
+// import "swiper/css";
+// import "swiper/css/free-mode";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/autoplay";
 
 import "./globals.css";
-
+import { Toaster } from "sonner";
 const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -28,6 +28,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={montserrat.className}>{children}</body>
+            <Toaster richColors />
         </html>
     );
 }
