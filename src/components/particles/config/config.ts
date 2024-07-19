@@ -1,10 +1,14 @@
 import { MoveDirection, OutMode } from "@tsparticles/engine";
 
 export const particleConfig2 = {
+    fullScreen: {
+        enable: false,
+        zIndex: 900,
+    },
     background: {
         color: {
-            value: "#FAFBFB",
-            // value: "#161617",
+            // value: "#FAFBFB",
+            value: "#23174f",
         },
     },
     fpsLimit: 120,
@@ -38,10 +42,12 @@ export const particleConfig2 = {
     },
     particles: {
         color: {
-            value: "#363636",
+            value: "#FAFBFB",
+            // value: "#363636",
         },
         links: {
-            color: "#363636",
+            color: "#FAFBFB",
+            // color: "#363636",
             distance: 150,
             enable: true,
             opacity: 0.1,

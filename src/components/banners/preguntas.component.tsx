@@ -15,7 +15,7 @@ const PreguntasComponet = () => {
     //
     return (
         <section
-            className={` relative w-[100%] h-full  z-30 bg-[#302172dc] grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5 `}
+            className={` relative w-[100%] h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5  `}
         >
             <div className="w-[100%] z-30 relative grid place-items-center">
                 <div className="texto-responsive-40 font-bold">

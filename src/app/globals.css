@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+#tsparticles {
+    height: 100%;
+    width: 100%;
+}
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +37,40 @@ html {
 
 /* body */
 body {
-    background: #fafbfb;
+    /* background: #fafbfb; */
+
+    /* 010824 - eee1 */
+    background-color: #fafbfb;
+    background-image: linear-gradient(
+            to right,
+            transparent 0 49px,
+            rgba(0, 0, 0, 0.067) 49px
+        ),
+        linear-gradient(
+            to bottom,
+            transparent 0 49px,
+            rgba(0, 0, 0, 0.067) 49px
+        );
+    background-size: 50px 50px;
+
+    &::before {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        content: "";
+        background-image: linear-gradient(
+            to right,
+            var(--Color1),
+            var(--Color4)
+        );
+        z-index: -1;
+        top: -200px;
+        /* left: calc(50% - 200px); */
+        left: 0;
+        border-radius: 50% 50% 0% 0%;
+        pointer-events: none;
+        filter: blur(250px);
+    }
 }
 body::-webkit-scrollbar {
     width: 10px;
@@ -56,8 +93,16 @@ body::-webkit-scrollbar-thumb {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-    opacity: 0.9;
+    opacity: 0.3;
 }
+
+@media (width <= 640px) {
+    .contenedor {
+        background-size: cover;
+        background-position: top;
+    }
+}
+
 .blur-effect-contenedor {
     background: #fafafa10;
     backdrop-filter: blur(0.2rem);
@@ -343,7 +388,9 @@ body::-webkit-scrollbar-thumb {
 
 /* Menu */
 .efecto-clase1 {
+    /* background: #23174f; */
     background: #23174f;
+
     font-size: medium;
     backdrop-filter: blur(2px);
     height: 60px;
@@ -789,6 +836,11 @@ body::-webkit-scrollbar-thumb {
 
 /* home */
 
+.animar-tarjetas {
+    animation: show-left-button 1s forwards 4s;
+    opacity: 0;
+}
+
 .home button {
     animation: show-left-button 1s forwards 3s;
     opacity: 0;
@@ -803,4 +855,198 @@ body::-webkit-scrollbar-thumb {
         translate: 0%;
         opacity: 1;
     }
+}
+
+/* Borrar home */
+#home {
+    padding-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+
+    & .content {
+        font-family: "MuseoModerno", system-ui;
+        & .name {
+            font-size: 7em;
+            font-weight: bold;
+            line-height: 1em;
+            & span {
+                background-image: linear-gradient(
+                    to right,
+                    #7be728,
+                    #f3265f,
+                    #7f40ac,
+                    #7be728
+                );
+                background-size: 200% auto;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                animation: shine 5s linear infinite;
+            }
+        }
+        & .des {
+            color: #eee5;
+            margin: 30px 0;
+            border-left: 0.7em solid #e945e3;
+            padding-left: 2em;
+        }
+        & a {
+            display: block;
+            font-size: large;
+            color: #eee;
+            font-weight: bold;
+            text-decoration: none;
+            border: 1px solid #eee;
+            background-color: transparent;
+            width: max-content;
+            padding: 20px 30px;
+            border-radius: 40px;
+        }
+    }
+    & .avatar {
+        text-align: right;
+        & .card {
+            display: inline-flex;
+            flex-direction: column;
+            width: min(100%, 400px);
+            box-shadow: 0 150px 150px #e945e333;
+            transition: 0.5s;
+            &:hover {
+                box-shadow: 0 150px 150px #e945e355;
+            }
+            & img {
+                width: 100%;
+                height: min(50vh, 700px);
+                object-fit: cover;
+                object-position: top;
+                clip-path: polygon(81% 0, 100% 18%, 100% 100%, 0 100%, 0 0);
+            }
+            & .info {
+                background-color: #eee;
+                color: #010824;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                text-align: center;
+                gap: 20px;
+                padding: 20px;
+                font-size: 1.2em;
+                & div:nth-child(1),
+                div:nth-child(2),
+                div:nth-child(3) {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/* Login */
+
+.rickWallpaper {
+    background: url("/netic.jpg") no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+}
+
+.showDown {
+    transition-duration: 1s;
+    transform: translatey(0%);
+}
+
+.showUp {
+    transition-duration: 1s;
+    transform: translatey(100%);
+}
+
+.rotateUp {
+    animation: arrowAnimated 0.8s both;
+}
+
+@keyframes arrowAnimated {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+.rotateDown {
+    animation: arrowAnimated2 0.8s both;
+}
+
+@keyframes arrowAnimated2 {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.mover {
+    animation: shake-vertical 2s both infinite;
+}
+@keyframes shake-vertical {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateY(-3px);
+    }
+    20%,
+    40%,
+    60% {
+        transform: translateY(3px);
+    }
+    80% {
+        transform: translateY(2.2px);
+    }
+    90% {
+        transform: translateY(-2.2px);
+    }
+}
+
+.sphere1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    background-size: cover;
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.sphere2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    background-size: cover;
+    box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.2),
+        inset 10px 10px 20px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.contenedor-mapa:hover .sphere2 {
+    z-index: 20;
+}
+.contenedor-mapa:hover .sphere1 {
+    z-index: 10;
 }

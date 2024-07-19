@@ -10,7 +10,7 @@ const TutorialesComponent = () => {
         setstate(true);
     }, []);
     return (
-        <section className="relative w-[90%] z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen sm:h-full h-full">
+        <section className="relative w-[90%] z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen sm:h-full h-full gap-10">
             <div className="z-10 circulo bg-[#3021722f] bottom-0 left-0"></div>
             <div className="z-10 circulo bg-[#fa00f615] top-0  right-0 "></div>
 
@@ -20,7 +20,7 @@ const TutorialesComponent = () => {
                 strong="Tutoriales"
             />
 
-            <div className="grilla-tutoriales mt-20 mb-10 z-30">
+            <div className="grilla-tutoriales z-30">
                 <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect efecto-show-scroll">
                     <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                         <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden efecto-show-scroll">

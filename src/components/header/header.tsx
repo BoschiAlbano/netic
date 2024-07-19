@@ -46,7 +46,7 @@ const Header = () => {
                 </Link>
             </div>
 
-            <div className="h-full flex flex-row  justify-center items-center  sm:px-10 px-5 sm:py-4 py-0 sm:gap-10 gap-4 font-bold texto-responsive-15    ">
+            <div className="h-full flex flex-row  justify-center items-center  sm:px-10 px-5 sm:py-4 py-0 sm:gap-10 gap-4 font-bold texto-responsive-15     ">
                 <Link className="subrayar" href="/">
                     HOME
                 </Link>

@@ -10,3 +10,12 @@ export interface StateContratar {
     };
     message?: null | string;
 }
+
+export interface StateRegister {
+    error?: {
+        email?: string[];
+        password?: string[];
+        passwordNetic?: string[];
+    };
+    message?: null | string;
+}

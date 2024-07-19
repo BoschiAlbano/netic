@@ -6,7 +6,8 @@ import TitleComponent from "../titles/title.component";
 const FormularioComponent = () => {
     return (
         <div
-            className={` relative w-[90%] z-30 grid place-items-center content-center p-0 py-20`}
+            // className={` relative w-[90%] z-30 grid place-items-center content-center p-0 py-20`}
+            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0  sm:min-h-screen sm:h-full h-full`}
         >
             <div className="z-10 circulo bg-[#3021722f] bottom-0 left-0"></div>
             <div className="z-10 circulo bg-[#fa00f615] top-0  right-0 "></div>

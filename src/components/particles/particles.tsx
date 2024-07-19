@@ -26,6 +26,7 @@ const ParticlesComponent = () => {
         return (
             <Particles
                 id="tsparticles"
+                style={{ height: "100%", width: "100%" }}
                 particlesLoaded={particlesLoaded}
                 options={options}
             />

@@ -1,6 +1,6 @@
 import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import prisma from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 
 export const authOptions: AuthOptions = {
     providers: [
@@ -8,7 +8,7 @@ export const authOptions: AuthOptions = {
             id: "credentials",
             name: "credentials",
             credentials: {
-                emal: {
+                email: {
                     label: "email",
                     type: "text",
                 },
@@ -22,29 +22,32 @@ export const authOptions: AuthOptions = {
                     throw new Error("Credenciales Indefinidas...");
                 }
 
-                const email = credentials.emal;
+                const email = credentials.email;
                 const password = credentials.password;
 
+                console.log(email, password);
                 // Base de datos
-                const Empleado = {
-                    nombre: "poveda agustin",
-                    email: "povedaagustin@gmail.com",
-                    password: "123",
-                    roll: 2,
-                };
+                const Empleado = await prisma.usuario.findUnique({
+                    where: { Email: email },
+                });
+
+                console.log(Empleado);
+                if (!Empleado) {
+                    throw new Error("Usuario no registrado");
+                }
 
                 if (
-                    email !== Empleado.email &&
-                    password !== Empleado.password
+                    email !== Empleado.Email &&
+                    password !== Empleado.Password
                 ) {
                     throw new Error("Usuario/contraseña no son correctos");
                 }
 
                 console.log("Auth Ok..");
                 return {
-                    name: Empleado.nombre,
-                    email: Empleado.email,
-                    roll: Empleado.roll,
+                    name: Empleado.Email,
+                    email: Empleado.Email,
+                    roll: 1,
                 };
             },
         }),

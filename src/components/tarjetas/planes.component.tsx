@@ -1,13 +1,10 @@
 "use client";
-
-// import useNerScreen from "@/app/hooks/useNerScreen";
 import React from "react";
 import TitleComponent from "../titles/title.component";
-import TarjetaBannerComponent from "./banner.component";
 const TarjetaPlanesComponent = () => {
     return (
         <section
-            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen sm:h-full h-full `}
+            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0  sm:min-h-screen sm:h-full h-full `}
         >
             <div id="IdPlanesWifi"></div>
 
@@ -24,8 +21,6 @@ const TarjetaPlanesComponent = () => {
             <div className={`w-full z-30 relative sm:my-20 my-0  `}>
                 <Tarjeta2 />
             </div>
-
-            <TarjetaBannerComponent />
         </section>
     );
 };

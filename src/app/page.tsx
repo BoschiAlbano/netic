@@ -5,6 +5,8 @@ import MenuComponent from "../components/menu/menu.component";
 import ParticlesComponent from "../components/particles/particles";
 import Planes from "../components/tarjetas/planes.component";
 import TutorialesComponent from "../components/tutoriales/tutoriales.component";
+import TarjetasPlanesComponent from "@/components/tarjetas/tarjetas.planes.component";
+import MapaComponent from "@/components/mapa/mapa.component";
 
 export default function Home() {
     return (
@@ -12,13 +14,13 @@ export default function Home() {
             {/* Menu */}
             <Header />
 
-            <div className=" z-10 w-full h-full absolute top-0 left-0 contenedor "></div>
-            <div className=" z-10 w-full h-full absolute top-0 left-0 blur-effect-contenedor "></div>
+            <div className=" z-10 w-full sm:h-full h-screen absolute top-0 left-0 contenedor "></div>
+            {/* <div className=" z-10 w-full h-full absolute top-0 left-0 blur-effect-contenedor "></div> */}
 
-            <section className="home relative z-30 sm:h-screen h-[50vh]  w-full flex flex-col justify-center items-center ">
-                <div className="relative z-30 grid place-content-center gap-4 sm:mb-40 mb-0">
-                    <div className=" flex flex-col justify-canter items-center gap-0   text-[var(--Color1)]">
-                        <h1 className="texto-efecto-entrada texto-responsive-50 font-extrabold sm:tracking-[5px] tracking-[1px]">
+            <section className="home relative z-30 sm:min-h-screen sm:h-full h-screen w-full flex flex-col justify-evenly items-center gap-0">
+                <div className="mt-[5%] relative z-30 grid place-content-center gap-4  ">
+                    <div className="flex flex-col justify-canter items-center gap-0  text-[var(--Color1)]">
+                        <h1 className="  texto-efecto-entrada texto-responsive-50 font-extrabold sm:tracking-[5px] tracking-[1px]">
                             LLegamos a tu hogar
                         </h1>
                         <h1 className="texto-efecto-entrada texto-responsive-40 font-normal">
@@ -27,20 +29,37 @@ export default function Home() {
                     </div>
                     <BotonesComponent texto="Contratar" page="/contratar" />
                 </div>
+
+                <div>
+                    <TarjetasPlanesComponent />
+                </div>
             </section>
 
             {/* menu redes */}
             <MenuComponent />
-            <ParticlesComponent />
+
+            {/* <div className=" relative  w-full h-[500px] bg-[--Color1] z-[1000]">
+                <ParticlesComponent />
+            </div> */}
 
             {/* Planes */}
             <Planes />
+
+            {/* Mapa */}
+            <MapaComponent />
 
             {/* tutoriales */}
             <TutorialesComponent />
 
             {/* Preguntas Frecuentes */}
-            <Preguntas />
+
+            <div className=" relative  w-full  bg-[#23174f] z-[900]">
+                <div className=" w-full h-full absolute z-10">
+                    <ParticlesComponent />
+                </div>
+
+                <Preguntas />
+            </div>
         </main>
     );
 }

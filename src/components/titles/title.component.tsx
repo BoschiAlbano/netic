@@ -19,7 +19,7 @@ const TitleComponent = ({ h1, span, strong }: titlecomponent) => {
     return (
         <div
             ref={refScreeen}
-            className={`sm:w-[100%] w-[80%] z-30 relative grid place-items-center ${
+            className={`sm:w-[100%] w-[80%] z-30 relative grid place-items-center sm:my-2 my-6 ${
                 isNearScreen ? "efecto-show" : "opacity-0"
             }`}
         >

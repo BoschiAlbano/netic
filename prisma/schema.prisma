@@ -1,22 +1,22 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlserver"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
+
 // Esquemas
 
+  // sqlserver
+  // id String @id @default(cuid())
+  // Mongo
+  // id    String @id @default(auto()) @map("_id") @db.ObjectId
 model contratar {
-  id String @id @default(cuid())
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   Nombre String
   DNI BigInt @unique
   Telefono BigInt
@@ -24,7 +24,17 @@ model contratar {
   Numero BigInt
   Casa String?
   Plan BigInt
+  Eliminado Boolean? @default(false)
 }
+
+model usuario {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  Email String @unique
+  Password String
+  Eliminado Boolean? @default(false)
+}
+
+
 
 // #### Data Base First ####
 // Generar los modelos, con bd que ya existe
@@ -37,3 +47,10 @@ model contratar {
 // por cada migracion que se haga usamos
 //     npx prisma generate
 // para actualizar el cliente de PrismaClient
+
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
