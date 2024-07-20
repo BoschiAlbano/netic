@@ -1,8 +1,8 @@
-import { AuthOptions } from "next-auth";
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/prisma";
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             id: "credentials",
