@@ -1,6 +1,6 @@
 import React from "react";
 import { redirect } from "next/navigation";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/authOption";
 import { getServerSession } from "next-auth/next";
 import FormularioRegisterComponent from "./components/formulario.register.component";
 
