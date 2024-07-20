@@ -1,10 +1,12 @@
 import React from "react";
-import prisma from "@/lib/prisma";
+// import prisma from "@/lib/prisma";
 
 const Page = async () => {
     // usar redux - almacenar los datos
     //
-    const pedidos = await prisma.contratar.findMany();
+    // const pedidos = await prisma.contratar.findMany();
+
+    const pedidos = [{ Nombre: "albano", DNI: "41771998", Telefono: "" }];
 
     return (
         <section>
