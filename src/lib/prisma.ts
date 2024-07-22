@@ -14,6 +14,8 @@
 
 // if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
 
+// -----> documentacion
+
 import { PrismaClient } from "@prisma/client";
 
 // Extiende la interfaz global para incluir la propiedad `prisma`
@@ -35,3 +37,21 @@ if (process.env.NODE_ENV === "production") {
 }
 
 export default prisma;
+
+// --->
+
+// import { PrismaClient } from "@/generated/prisma-client";
+
+// const prismaClientSingleton = () => {
+//     return new PrismaClient();
+// };
+
+// declare global {
+//     var prismaGlobal: undefined | ReturnType<typeof prismaClientSingleton>;
+// }
+
+// const prisma = globalThis.prismaGlobal ?? prismaClientSingleton();
+
+// export default prisma;
+
+// if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
