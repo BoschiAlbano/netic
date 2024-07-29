@@ -18,12 +18,13 @@ datasource db {
 model contratar {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   Nombre String
-  DNI BigInt @unique
-  Telefono BigInt
+  DNI Int @unique
+  Telefono Int
   Calle String
-  Numero BigInt
+  Numero Int
   Casa String?
-  Plan BigInt
+  Plan Int
+  Column String @default("Nuevo")
   Eliminado Boolean? @default(false)
 }
 

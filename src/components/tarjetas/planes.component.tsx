@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import TitleComponent from "../titles/title.component";
+import useNerScreen from "@/app/hooks/useNerScreen";
 const TarjetaPlanesComponent = () => {
     return (
         <section
@@ -27,9 +28,21 @@ const TarjetaPlanesComponent = () => {
 export default TarjetaPlanesComponent;
 
 function Tarjeta2() {
+    const { elementRef: refScreeenCar1, isNearScreen: isNearScreenCar1 } =
+        useNerScreen({
+            distance: "0px",
+            once: true,
+        });
+
     return (
-        <div className="grillaPlanes sm:scale-[1.1] scale-none ">
-            <div className="box efecto-show-scroll ">
+        <div
+            ref={refScreeenCar1}
+            className={`grillaPlanes sm:scale-[1.1] scale-none ${
+                isNearScreenCar1 ? "efecto-show" : "opacity-0"
+            }`}
+        >
+            {/* efecto-show-scroll */}
+            <div className="box  ">
                 <p className="title">PLAN</p>
                 <div className="price">
                     <b>50</b>
@@ -47,8 +60,8 @@ function Tarjeta2() {
                     <button>Contratar</button>
                 </div>
             </div>
-
-            <div className="box efecto-show-scroll-sin-scale professional">
+            {/* efecto-show-scroll-sin-scale */}
+            <div className="box  professional">
                 <p className="title">PLAN</p>
                 <div className="price">
                     <b>100</b>
@@ -66,8 +79,8 @@ function Tarjeta2() {
                     <button>Contratar</button>
                 </div>
             </div>
-
-            <div className="box efecto-show-scroll">
+            {/* efecto-show-scroll */}
+            <div className="box ">
                 <p className="title">PLAN</p>
                 <div className="price">
                     <b>200</b>

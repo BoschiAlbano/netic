@@ -3,6 +3,7 @@
 import { StateContratar } from "@/models/clients/contratar.model";
 import z from "zod";
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 const createContratarSchema = z.object({
     Nombre: z
@@ -76,6 +77,8 @@ export async function contratar(prevState: StateContratar, formData: FormData) {
                 },
             };
         }
+
+        revalidatePath("/admin/auth/home");
 
         return {
             message: "enviado... Estaremos en contacto Gracias 👌",

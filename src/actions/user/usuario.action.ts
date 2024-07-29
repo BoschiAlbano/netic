@@ -2,6 +2,8 @@
 
 import prisma from "@/lib/prisma";
 import { StateRegister } from "@/models/clients/contratar.model";
+import { revalidatePath } from "next/cache";
+import { NextResponse } from "next/server";
 import { z } from "zod";
 
 const CreateRegisterSchema = z.object({
@@ -73,5 +75,37 @@ export async function register(prevState: StateRegister, formData: FormData) {
             errors: { error: ["en el Servidor..."] },
             message: "Error, en el servidor",
         };
+    }
+}
+
+interface CardType {
+    id: string;
+    Column: "Nuevo" | "Pendiente";
+    Nombre: string;
+    DNI: number;
+    Telefono: number;
+    Calle: string;
+    Numero: number;
+    Casa: string | null;
+    Plan: number;
+    Eliminado: boolean | null;
+}
+
+export async function update_contratar(newlist: CardType[]): Promise<boolean> {
+    try {
+        await prisma.$transaction(
+            newlist.map((op) =>
+                prisma.contratar.update({
+                    where: { id: op.id },
+                    data: { Eliminado: op.Eliminado, Column: op.Column },
+                })
+            )
+        );
+
+        revalidatePath("/admin/auth/home");
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
     }
 }

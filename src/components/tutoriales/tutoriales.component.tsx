@@ -3,12 +3,20 @@ import React, { useEffect, useState } from "react";
 import YouTubePlayer from "react-player/youtube";
 import TitleComponent from "../titles/title.component";
 import BotonesComponent from "../buttons/button.component";
+import useNerScreen from "@/app/hooks/useNerScreen";
 const TutorialesComponent = () => {
     const [state, setstate] = useState(false);
 
     useEffect(() => {
         setstate(true);
     }, []);
+
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
     return (
         <section className="relative w-[90%] z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen sm:h-full h-full gap-10">
             <div className="z-10 circulo bg-[#3021722f] bottom-0 left-0"></div>
@@ -20,10 +28,17 @@ const TutorialesComponent = () => {
                 strong="Tutoriales"
             />
 
-            <div className="grilla-tutoriales z-30">
-                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect efecto-show-scroll">
+            <div
+                ref={refScreeen}
+                className={`grilla-tutoriales z-30 ${
+                    isNearScreen ? "efecto-show" : "opacity-0"
+                }`}
+            >
+                {/* efecto-show-scroll */}
+                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect ">
                     <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
-                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden efecto-show-scroll">
+                        {/* efecto-show-scroll */}
+                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">
                             {state && (
                                 <YouTubePlayer
                                     url={
@@ -48,9 +63,11 @@ const TutorialesComponent = () => {
                         </p>
                     </div>
                 </div>
-                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect efecto-show-scroll">
+                {/* efecto-show-scroll */}
+                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect ">
                     <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
-                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden efecto-show-scroll">
+                        {/* efecto-show-scroll */}
+                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">
                             {state && (
                                 <YouTubePlayer
                                     url={
@@ -75,9 +92,11 @@ const TutorialesComponent = () => {
                         </p>
                     </div>
                 </div>
-                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect efecto-show-scroll">
+                {/* efecto-show-scroll */}
+                <div className="w-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect ">
                     <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
-                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden efecto-show-scroll">
+                        {/* efecto-show-scroll */}
+                        <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">
                             {state && (
                                 <YouTubePlayer
                                     url={

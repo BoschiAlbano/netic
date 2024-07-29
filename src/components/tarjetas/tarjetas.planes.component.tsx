@@ -1,3 +1,5 @@
+"use client";
+import useNerScreen from "@/app/hooks/useNerScreen";
 import React from "react";
 const steps = [
     {
@@ -13,7 +15,7 @@ const steps = [
             "Tendrás que introducir tu dirección para asegurarnos de que la fibra de Netic llega a tu casa.",
     },
     {
-        icon: "/iconos/calendarioicon.png",
+        icon: "/iconos/calendarioIcon.png",
         title: "Cita de instalación",
         description:
             "Una vez contratado, un experto se pondrá en contacto contigo para concertar la fecha de instalación que más te convenga. ¡Tú eliges!",
@@ -32,30 +34,49 @@ const TarjetasPlanesComponent = () => {
             className={`animar-tarjetas sm:absolute sm:bottom-[12rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
         >
             {steps.map((step, index) => {
-                return (
-                    <div
-                        key={index}
-                        className={` w-[80%] sm:w-auto flex flex-row justify-center items-center rounded-[5px] py-2 px-4  efecto-show-scroll  gap-4 sm:min-h-[80px] min-h-[50px] blur-effect hover:bg-[var(--Color4)]`}
-                    >
-                        <div className="h-[auto] grid place-items-center">
-                            <img
-                                src={step.icon}
-                                className=" sm:w-[60px] w-[40px]"
-                            />
-                        </div>
-                        <div className="flex flex-col items-center text-center w-full">
-                            <h3 className="texto-responsive-20 font-semibold">
-                                {step.title}
-                            </h3>
-                            {/* <p className="texto-responsive-15 text-gray-600">
-                                    {step.description}
-                                </p> */}
-                        </div>
-                    </div>
-                );
+                return <Tarj key={index} step={step} />;
             })}
         </section>
     );
 };
 
 export default TarjetasPlanesComponent;
+
+function Tarj({
+    step,
+}: {
+    step: {
+        icon: string;
+        title: string;
+        description: string;
+    };
+}) {
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
+
+    return (
+        <div
+            // efecto-show-scroll
+            ref={refScreeen}
+            className={` w-[80%] sm:w-auto flex flex-row justify-center items-center rounded-[5px] py-2 px-4    gap-4 sm:min-h-[80px] min-h-[50px] blur-effect hover:bg-[var(--Color4)] ${
+                isNearScreen ? "efecto-show" : "opacity-0"
+            }`}
+        >
+            <div className="h-[auto] grid place-items-center">
+                <img src={step.icon} className=" sm:w-[60px] w-[40px]" />
+            </div>
+            <div className="flex flex-col items-center text-center w-full">
+                <h3 className="texto-responsive-20 font-semibold">
+                    {step.title}
+                </h3>
+                {/* <p className="texto-responsive-15 text-gray-600">
+                                    {step.description}
+                                </p> */}
+            </div>
+        </div>
+    );
+}

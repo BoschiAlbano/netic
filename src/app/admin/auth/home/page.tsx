@@ -1,29 +1,25 @@
-import React from "react";
+import React, { Suspense } from "react";
+import CustomKanban from "./components/crud.component";
+import Header from "./components/header.component";
+import TitleComponent from "@/components/titles/title.component";
+
 import prisma from "@/lib/prisma";
-
 const Page = async () => {
-    // usar redux - almacenar los datos
-    //
-    const pedidos = await prisma.contratar.findMany();
-
-    // const pedidos = [{ Nombre: "albano", DNI: "41771998", Telefono: "" }];
+    const contratar = await prisma.contratar.findMany({
+        where: { Eliminado: false },
+    });
 
     return (
-        <section>
-            <h1>Pedididos de clientes</h1>
+        <section className="relative w-full h-full  ">
+            <Header />
 
-            {pedidos.map((items, index) => {
-                return (
-                    <div
-                        key={index}
-                        className=" flex flex-col justify-center items-center"
-                    >
-                        <h1>{items.Nombre}</h1>
-                        <h1>{items.DNI}</h1>
-                        <h1>{items.Telefono}</h1>
-                    </div>
-                );
-            })}
+            <section className="pt-[80px]">
+                <TitleComponent h1="" span="" strong="Clientes" />
+
+                <Suspense fallback={<p>Cargando...</p>}>
+                    <CustomKanban datos={contratar} />
+                </Suspense>
+            </section>
         </section>
     );
 };

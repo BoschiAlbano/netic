@@ -12,7 +12,7 @@ const TitleComponent = ({ h1, span, strong }: titlecomponent) => {
     const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
         {
             distance: "0px",
-            once: false,
+            once: true,
         }
     );
 

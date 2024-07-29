@@ -13,7 +13,7 @@ const steps = [
             "Tendrás que introducir tu dirección para asegurarnos de que la fibra de Netic llega a tu casa.",
     },
     {
-        icon: "/iconos/calendarioicon.png",
+        icon: "/iconos/calendarioIcon.png",
         title: "Cita de instalación",
         description:
             "Una vez contratado, un experto se pondrá en contacto contigo para concertar la fecha de instalación que más te convenga. ¡Tú eliges!",
