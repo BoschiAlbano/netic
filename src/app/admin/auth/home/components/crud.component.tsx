@@ -376,52 +376,13 @@ type CardType = {
     id: string;
     Column: ColumnType;
     Nombre: string;
-    DNI: number;
-    Telefono: number;
+    DNI: string;
+    Telefono: string;
     Calle: string;
     Numero: number;
     Casa: string | null;
     Plan: number;
     Eliminado: boolean | null;
 };
-
-const DEFAULT_CARDS: CardType[] = [
-    {
-        id: "1",
-        Column: "Nuevo",
-        Calle: "santa fe",
-        Casa: "1",
-        DNI: 41771998,
-        Eliminado: false,
-        Nombre: "albano jose boschi",
-        Numero: 2973,
-        Plan: 1,
-        Telefono: 3816206925,
-    },
-    {
-        id: "2",
-        Column: "Nuevo",
-        Calle: "santa fe",
-        Casa: "1",
-        DNI: 41771998,
-        Eliminado: false,
-        Nombre: "albano jose boschi",
-        Numero: 2973,
-        Plan: 1,
-        Telefono: 3816206925,
-    },
-    {
-        id: "3",
-        Column: "Pendiente",
-        Calle: "santa fe",
-        Casa: "1",
-        DNI: 41771998,
-        Eliminado: false,
-        Nombre: "albano jose boschi",
-        Numero: 2973,
-        Plan: 1,
-        Telefono: 3816206925,
-    },
-];
 
 export default CustomKanban;

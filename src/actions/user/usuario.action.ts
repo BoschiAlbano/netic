@@ -82,8 +82,8 @@ interface CardType {
     id: string;
     Column: "Nuevo" | "Pendiente";
     Nombre: string;
-    DNI: number;
-    Telefono: number;
+    DNI: string;
+    Telefono: string;
     Calle: string;
     Numero: number;
     Casa: string | null;

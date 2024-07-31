@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `contratar` MODIFY `DNI` VARCHAR(191) NOT NULL,
+    MODIFY `Telefono` VARCHAR(191) NOT NULL;

@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -16,10 +16,10 @@ datasource db {
   // Mongo
   // id    String @id @default(auto()) @map("_id") @db.ObjectId
 model contratar {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  id    String @id @default(cuid())
   Nombre String
-  DNI Int @unique
-  Telefono Int
+  DNI String
+  Telefono String
   Calle String
   Numero Int
   Casa String?
@@ -29,7 +29,7 @@ model contratar {
 }
 
 model usuario {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  id    String @id @default(cuid())
   Email String @unique
   Password String
   Eliminado Boolean? @default(false)

@@ -1,6 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import prisma from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
     providers: [
@@ -27,17 +27,10 @@ export const authOptions: NextAuthOptions = {
 
                 console.log(email, password);
                 // Base de datos
-                // const Empleado = await prisma.usuario.findUnique({
-                //     where: { Email: email },
-                // });
+                const Empleado = await prisma.usuario.findUnique({
+                    where: { Email: email },
+                });
 
-                const Empleado = {
-                    Email: "boschi.albano.jose@gmail.com",
-                    Password: "123",
-                    id: "123456ab",
-                };
-
-                console.log(Empleado);
                 if (!Empleado) {
                     throw new Error("Usuario no registrado");
                 }

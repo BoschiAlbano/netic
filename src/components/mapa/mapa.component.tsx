@@ -50,7 +50,7 @@ const MapaComponent = () => {
                         </div>
                         <span>Ventas</span>
                         <span className=" text-center max-w-[300px]">
-                            <strong>+54 381-6206925</strong>
+                            <strong>+54 381-9999999</strong>
                             <br />
                             <span className=" ">
                                 Ildelfonso de las muñecas 1431, San Miguel de
@@ -64,7 +64,7 @@ const MapaComponent = () => {
                         </div>
                         <span>Ventas</span>
                         <span className=" text-center max-w-[300px]">
-                            <strong>+54 381-6206925</strong>
+                            <strong>+54 381-9999999</strong>
                             <br />
                             <span>
                                 Ildelfonso de las muñecas 1431, San Miguel de
@@ -78,7 +78,7 @@ const MapaComponent = () => {
                         </div>
                         <span>Ventas</span>
                         <span className=" text-center max-w-[300px]">
-                            <strong>+54 381-6206925</strong>
+                            <strong>+54 381-9999999</strong>
                             <br />
                             <span>
                                 Ildelfonso de las muñecas 1431, San Miguel de
@@ -92,7 +92,7 @@ const MapaComponent = () => {
                         </div>
                         <span>Ventas</span>
                         <span className=" text-center max-w-[300px]">
-                            <strong>+54 381-6206925</strong>
+                            <strong>+54 381-9999999</strong>
                             <br />
                             <span>
                                 Ildelfonso de las muñecas 1431, San Miguel de

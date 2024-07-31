@@ -51,8 +51,11 @@ export async function contratar(prevState: StateContratar, formData: FormData) {
         }
 
         // Buscar DNI
-        const buscarDNI = await prisma.contratar.findUnique({
-            where: { DNI: _DatosValidados.data.DNI },
+        const buscarDNI = await prisma.contratar.findFirst({
+            where: {
+                DNI: _DatosValidados.data.DNI.toString(),
+                Eliminado: false,
+            },
         });
         if (buscarDNI) {
             return {
@@ -64,7 +67,11 @@ export async function contratar(prevState: StateContratar, formData: FormData) {
         }
         // Guardar en DB usando Prisma...
         const guardarDB = await prisma.contratar.create({
-            data: _DatosValidados.data,
+            data: {
+                ..._DatosValidados.data,
+                Telefono: _DatosValidados.data.Telefono.toString(),
+                DNI: _DatosValidados.data.DNI.toString(),
+            },
         });
 
         console.log(guardarDB);
