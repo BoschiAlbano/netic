@@ -6,7 +6,7 @@ const Page = () => {
     return (
         <>
             <Header />
-            <div className=" w-full grid place-items-center ">
+            <div className=" w-full grid place-items-center sm:pt-0 pt-[80px] ">
                 <FormularioComponent />
             </div>
         </>

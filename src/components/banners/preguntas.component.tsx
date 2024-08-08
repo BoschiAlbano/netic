@@ -90,9 +90,12 @@ const PreguntasComponet = () => {
                 />
             </div>
 
-            <button className=" font-bold text-white texto-responsive-20 border-[1px] shadow-xl py-2 px-2 rounded-[5px] hover:bg-slate-200  hover:text-black">
+            <a
+                href="/preguntas"
+                className=" font-bold text-white texto-responsive-20 border-[1px] shadow-xl py-2 px-2 rounded-[5px] hover:bg-slate-200  hover:text-black"
+            >
                 mas preguntas
-            </button>
+            </a>
         </section>
     );
 };
