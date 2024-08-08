@@ -2,6 +2,7 @@
 import React from "react";
 import TitleComponent from "../titles/title.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
+import Link from "next/link";
 const TarjetaPlanesComponent = () => {
     return (
         <section
@@ -37,7 +38,7 @@ function Tarjeta2() {
     return (
         <div
             ref={refScreeenCar1}
-            className={`grillaPlanes sm:scale-[1.1] scale-none ${
+            className={`grillaPlanes  ${
                 isNearScreenCar1 ? "efecto-show" : "opacity-0"
             }`}
         >
@@ -57,7 +58,9 @@ function Tarjeta2() {
                 </div>
 
                 <div className="button">
-                    <button>Contratar</button>
+                    <Link href={"/contratar"}>
+                        <button>Contratar</button>
+                    </Link>
                 </div>
             </div>
             {/* efecto-show-scroll-sin-scale */}
@@ -76,7 +79,9 @@ function Tarjeta2() {
                 </div>
 
                 <div className="button">
-                    <button>Contratar</button>
+                    <Link href={"/contratar/"}>
+                        <button>Contratar</button>
+                    </Link>
                 </div>
             </div>
             {/* efecto-show-scroll */}
@@ -95,7 +100,9 @@ function Tarjeta2() {
                 </div>
 
                 <div className="button">
-                    <button>Contratar</button>
+                    <Link href={"/contratar"}>
+                        <button>Contratar</button>
+                    </Link>
                 </div>
             </div>
         </div>

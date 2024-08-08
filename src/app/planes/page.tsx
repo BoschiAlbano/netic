@@ -6,7 +6,7 @@ const Page = () => {
     return (
         <div>
             <Header />
-            <div className=" w-full pt-20 grid place-items-center">
+            <div className=" w-full grid place-items-center">
                 <Planes />
             </div>
         </div>

@@ -5,7 +5,7 @@ import MenuComponent from "../components/menu/menu.component";
 import ParticlesComponent from "../components/particles/particles";
 import Planes from "../components/tarjetas/planes.component";
 import TutorialesComponent from "../components/tutoriales/tutoriales.component";
-import TarjetasPlanesComponent from "@/components/tarjetas/tarjetas.planes.component";
+import TarjetasBanner from "@/components/tarjetas/tarjetas.planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                    <TarjetasPlanesComponent />
+                    <TarjetasBanner />
                 </div>
             </section>
 
@@ -41,6 +41,8 @@ export default function Home() {
             {/* <div className=" relative  w-full h-[500px] bg-[--Color1] z-[1000]">
                 <ParticlesComponent />
             </div> */}
+
+            {/* seguridad */}
 
             {/* Planes */}
             <Planes />

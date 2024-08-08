@@ -28,7 +28,7 @@ const steps = [
     },
 ];
 
-const TarjetasPlanesComponent = () => {
+const TarjetasBanner = () => {
     return (
         <section
             className={`animar-tarjetas sm:absolute sm:bottom-[12rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
@@ -40,7 +40,7 @@ const TarjetasPlanesComponent = () => {
     );
 };
 
-export default TarjetasPlanesComponent;
+export default TarjetasBanner;
 
 function Tarj({
     step,

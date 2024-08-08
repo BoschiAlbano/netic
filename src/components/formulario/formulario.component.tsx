@@ -1,9 +1,18 @@
+"use client";
 import React from "react";
 
 import FormularioSubmit from "./formulario.submit.component";
 import TitleComponent from "../titles/title.component";
+import useNerScreen from "@/app/hooks/useNerScreen";
 
 const FormularioComponent = () => {
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
+
     return (
         <div
             // className={` relative w-[90%] z-30 grid place-items-center content-center p-0 py-20`}
@@ -19,7 +28,10 @@ const FormularioComponent = () => {
             />
 
             <section
-                className={`w-full grid place-items-center mt-10 z-30 efecto-show-scroll`}
+                ref={refScreeen}
+                className={`w-full grid place-items-center mt-10 z-30  ${
+                    isNearScreen ? "efecto-show" : "opacity-0"
+                }`}
             >
                 <div className=" grid sm:grid-cols-2 grid-cols-1 place-content-center sm:w-[70%] w-full contenedor-formulario justify-items-center items-center gap-4 ">
                     <img src="/contactanos.png" alt="" className=" w-[90%]" />
