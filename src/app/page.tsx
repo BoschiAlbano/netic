@@ -15,15 +15,14 @@ export default function Home() {
             <Header />
 
             <div className=" z-10 w-full sm:h-full h-screen absolute top-0 left-0 contenedor "></div>
-            {/* <div className=" z-10 w-full h-full absolute top-0 left-0 blur-effect-contenedor "></div> */}
 
             <section className="home relative z-30 sm:min-h-screen sm:h-full h-screen w-full flex flex-col justify-evenly items-center gap-0">
                 <div className="mt-[5%] relative z-30 grid place-content-center gap-4  ">
                     <div className="flex flex-col justify-canter items-center gap-0  text-[var(--Color1)]">
-                        <h1 className="  texto-efecto-entrada texto-responsive-50 font-extrabold sm:tracking-[5px] tracking-[1px]">
+                        <h1 className="   sm:text-6xl text-3xl font-extrabold sm:tracking-[5px] tracking-[1px] sm:mb-4 mb-2">
                             LLegamos a tu hogar
                         </h1>
-                        <h1 className="texto-efecto-entrada texto-responsive-40 font-normal">
+                        <h1 className=" sm:text-3xl text-lg font-normal sm:mb-4 mb-2">
                             velocidad, seguridad y confiabilidad
                         </h1>
                     </div>
@@ -35,8 +34,10 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* menu redes */}
-            <MenuComponent />
+            {/* menu redes sm:block hidden */}
+            <div className=" ">
+                <MenuComponent />
+            </div>
 
             {/* <div className=" relative  w-full h-[500px] bg-[--Color1] z-[1000]">
                 <ParticlesComponent />
@@ -62,6 +63,8 @@ export default function Home() {
 
                 <Preguntas />
             </div>
+
+            {/* pruebas  */}
         </main>
     );
 }

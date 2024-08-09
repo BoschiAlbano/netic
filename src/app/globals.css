@@ -37,9 +37,6 @@ html {
 
 /* body */
 body {
-    /* background: #fafbfb; */
-
-    /* 010824 - eee1 */
     background-color: #fafbfb;
     background-image: linear-gradient(
             to right,
@@ -83,7 +80,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Degradodo imagen de fondo */
-
 .img-degradado {
     mask-image: linear-gradient(rgb(255, 255, 255) 75%, transparent);
 }
@@ -109,14 +105,11 @@ body::-webkit-scrollbar-thumb {
     -webkit-backdrop-filter: blur(0.2rem);
 }
 
-/* MENU */
-
 /* Texto Menu */
 .subrayar {
     cursor: pointer;
     position: relative;
     border: none;
-    background: none;
     text-transform: uppercase;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
@@ -141,7 +134,7 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     position: absolute;
     width: 0%;
-    height: 2px;
+    height: 3px;
     background-color: var(--Efecto-Categorias);
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
@@ -155,25 +148,9 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0px 0px 50px 5px var(--Color4);
 }
 
-/* Textos */
-.texto-responsive-50 {
-    font-size: clamp(25px, 5vw, 70px);
-}
-
-.texto-responsive-40 {
-    font-size: clamp(20px, 4vw, 40px);
-}
-.texto-responsive-25 {
-    font-size: clamp(12px, 3vw, 25px);
-}
-
-.texto-responsive-20 {
-    font-size: clamp(12px, 2.5vw, 20px);
-}
-
-.texto-responsive-15 {
-    font-size: clamp(10px, 2vw, 15px);
-}
+/* .texto-responsive-15 {
+    font-size: clamp(13px, 13px, 16px);
+} */
 
 /* Efecto Blur */
 .blur-effect {
@@ -398,35 +375,42 @@ body::-webkit-scrollbar-thumb {
 /* Menu */
 .efecto-clase1 {
     /* background: #23174f; */
-    background: #23174f;
+    /* background: #23174f; */
 
     font-size: medium;
     backdrop-filter: blur(2px);
     height: 60px;
-    color: #ffffff;
+    color: #000000;
 
-    & .efecto-logo {
+    & .boton {
+        padding: 0.3rem 0.5rem;
+    }
+
+    /* & .efecto-logo {
         opacity: 2;
         display: none;
-    }
+    } */
 }
 
 .efecto-clase2 {
     background: transparent;
 
-    & .efecto-logo {
+    /* & .efecto-logo {
         opacity: 1;
         display: flex;
-    }
+    } */
 }
 
 .show-menu {
-    animation: show-menu 1s forwards 2s;
+    position: fixed;
+    animation: show-menu 1s forwards 3s;
 }
 
 @keyframes show-menu {
     to {
-        top: calc(50vh - 50px);
+        top: calc(50vh - 100px);
+        /* top: 50%; */
+        /* transform: translateY(-100px); */
         opacity: 1;
     }
 }
@@ -463,23 +447,6 @@ body::-webkit-scrollbar-thumb {
         opacity: 1;
     }
 }
-
-/* .efecto-show-right {
-    animation: show-right 1s both;
-    translate: -100%;
-}
-
-@keyframes show-right {
-    0% {
-        translate: -100%;
-        opacity: 0;
-    }
-    100% {
-        translate: 0%;
-        opacity: 1;
-    }
-} */
-
 /* Menu Izquierda */
 .input-menu {
     display: flex;
@@ -489,12 +456,18 @@ body::-webkit-scrollbar-thumb {
     transition: 1s;
     padding: 10px;
     overflow: hidden;
-    background-color: #ffffffa9;
+    background-color: #ffffff70;
     backdrop-filter: blur(0.2rem);
     -webkit-backdrop-filter: blur(0.2rem);
     -webkit-box-shadow: 0px 0px 50px 5px var(--Color4);
     -moz-box-shadow: 0px 0px 50px 5px var(--Color4);
     box-shadow: 0px 0px 50px 5px var(--Color4);
+}
+
+@media (width <= 600px) {
+    .input-menu {
+        padding: 5px;
+    }
 }
 
 .value-menu {
@@ -507,15 +480,12 @@ body::-webkit-scrollbar-thumb {
     gap: 5px;
     cursor: pointer;
     border-radius: 10px;
-    /* transition: 1s; */
     box-sizing: border-box;
 }
 
-/* .value-menu:focus {
-    background-color: var(--Color1);
-    outline: none;
-    margin-left: 17px;
-} */
+.value-menu svg {
+    width: 20px;
+}
 
 .value-menu svg {
     width: 20px;
@@ -678,7 +648,6 @@ body::-webkit-scrollbar-thumb {
         cubic-bezier(0.215, 0.61, 0.355, 1) both;
     animation: tracking-in-expand 0.4s linear both;
     opacity: 0;
-    animation-delay: 1s;
 }
 
 @keyframes tracking-in-expand {
@@ -690,20 +659,6 @@ body::-webkit-scrollbar-thumb {
         opacity: 0.6;
     }
     100% {
-        opacity: 1;
-    }
-}
-
-.mostrar {
-    animation: blur-in 0.5s linear;
-}
-@keyframes blur-in {
-    0% {
-        filter: blur(12px);
-        opacity: 0;
-    }
-    100% {
-        filter: blur(0);
         opacity: 1;
     }
 }
@@ -746,7 +701,7 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-.efecto-show-scroll-sin-scale {
+/* .efecto-show-scroll-sin-scale {
     animation: show-scroll-sin-scale both;
     animation-timeline: view();
     animation-range: entry 5% cover 50%;
@@ -760,14 +715,12 @@ body::-webkit-scrollbar-thumb {
         opacity: 1;
         translate: 0 0;
     }
-}
+} */
 
-.efecto-show-scroll {
+/* .efecto-show-scroll {
     animation: show-scroll both;
     animation-timeline: view();
     animation-range: entry 5% cover 50%;
-    /* animation-range: entry 5% entry 50%, exit 0% exit 100%, entry 0% exit 100%; */
-
     animation-iteration-count: 1;
 }
 
@@ -782,7 +735,7 @@ body::-webkit-scrollbar-thumb {
         opacity: 1;
         translate: 0 0;
     }
-}
+} */
 
 /* button */
 .cta {
@@ -850,14 +803,57 @@ body::-webkit-scrollbar-thumb {
 /* home */
 
 .animar-tarjetas {
-    animation: show-left-button 1s forwards 4s;
+    animation: show-left-button 1s forwards 3s;
     opacity: 0;
+    overflow: hidden;
 }
 
 .home button {
-    animation: show-left-button 1s forwards 3s;
+    animation: show-left-button 1s forwards 2s;
     opacity: 0;
 }
+
+.home h1 {
+    animation: show-scroll-sin-scale 2s forwards ease;
+}
+
+.mostrar {
+    animation: blur-in 2s ease;
+}
+
+@keyframes blur-in {
+    0% {
+        /* filter: blur(12px); */
+        opacity: 0;
+    }
+    100% {
+        /* filter: blur(0); */
+        opacity: 1;
+    }
+}
+
+@keyframes show-scroll-sin-scale {
+    0% {
+        opacity: 0;
+        translate: 0 100px;
+    }
+    100% {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+/* .animar-tarjetas:nth-child(1) {
+    animation-delay: 3s;
+}
+.animar-tarjetas:nth-child(2) {
+    animation-delay: 4s;
+}
+.animar-tarjetas:nth-child(3) {
+    animation-delay: 5s;
+}
+.animar-tarjetas:nth-child(4) {
+    animation-delay: 6s;
+} */
 
 @keyframes show-left-button {
     0% {
@@ -1026,7 +1022,7 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-.sphere1 {
+/* .sphere1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -1040,9 +1036,9 @@ body::-webkit-scrollbar-thumb {
         inset 10px 10px 20px rgba(255, 255, 255, 0.5),
         0 0 20px rgba(0, 0, 0, 0.2);
     z-index: 20;
-}
+} */
 
-.sphere2 {
+/* .sphere2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -1062,7 +1058,7 @@ body::-webkit-scrollbar-thumb {
 }
 .contenedor-mapa:hover .sphere1 {
     z-index: 10;
-}
+} */
 
 /* Cliente */
 .notification {
@@ -1070,8 +1066,6 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     isolation: isolate;
     position: relative;
-    /* width: 18rem; */
-    /* height: 8rem; */
     padding: 0px 0px 10px 0px;
     background: #ffffff;
     border-radius: 1rem;
@@ -1190,41 +1184,23 @@ body::-webkit-scrollbar-thumb {
 .card {
     overflow: hidden;
     color: white;
-    /* background: linear-gradient(#fafafa, #fafafa) padding-box,
-        linear-gradient(145deg, transparent 0%, #e81cff, #40c9ff) border-box;
-    border: 4px solid transparent;
-    border-radius: 5px; */
-
-    /* background: #fafafa10;
-    backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem); */
-
-    /* transform-origin: right bottom; */
-    /* transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); */
 }
 
 /* Boton WhatsApp */
-/* From Uiverse.io by NelsonDJCR */
 .button2 {
-    /* display: inline-block; */
     transition: all 0.2s ease-in;
     position: relative;
     overflow: hidden;
     z-index: 1;
     color: #090909;
-    /* padding: 0.7em 3.3em 0.7em 1.7em; */
     font-size: 18px;
     border-radius: 0.5em;
     background: #e8e8e8;
     border: 1px solid #e8e8e8;
-    /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
 }
 
 .button2 > svg {
     height: 30px;
-    /* position: absolute; */
-    /* padding: 0px 5px; */
-    /* margin-top: -4px; */
 }
 
 .button2:active {
@@ -1277,4 +1253,167 @@ body::-webkit-scrollbar-thumb {
     top: -45%;
     background-color: #009087;
     transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+/* nuevo menu */
+
+/* From Uiverse.io by Zameerahmad01 */
+ul {
+    list-style: none;
+}
+
+.example-2 {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+.example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+}
+.example-2 .icon-content .tooltip {
+    position: absolute;
+    top: 20px;
+    left: 40%;
+    transform: translateX(50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: 5px;
+}
+.example-2 .icon-content .a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content .a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content .a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+}
+
+@media (width <= 640px) {
+    .example-2 .icon-content .a {
+        width: 40px;
+        height: 40px;
+    }
+    .example-2 .icon-content .a svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+.example-2 .icon-content .a:hover {
+    color: white;
+}
+.example-2 .icon-content .a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content .a:hover .filled {
+    height: 100%;
+}
+
+.example-2 .icon-content .a[data-social="Facebook"] .filled {
+    background-color: #0274b3;
+}
+.example-2 .icon-content .a[data-social="Facebook"] ~ .tooltip {
+    background-color: #0274b3;
+    left: 0px;
+    transform: translateX(-110%);
+}
+
+.example-2 .icon-content .a[data-social="WhatsAppp"] .filled {
+    background-color: #4cb050;
+}
+.example-2 .icon-content .a[data-social="WhatsAppp"] ~ .tooltip {
+    background-color: #4cb050;
+    left: 0px;
+    transform: translateX(-110%);
+}
+.example-2 .icon-content .a[data-social="instagram"] .filled {
+    background: linear-gradient(
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+    );
+}
+.example-2 .icon-content .a[data-social="instagram"] ~ .tooltip {
+    background: linear-gradient(
+        45deg,
+        #405de6,
+        #5b51db,
+        #b33ab4,
+        #c135b4,
+        #e1306c,
+        #fd1f1f
+    );
+    left: 0px;
+    transform: translateX(-110%);
+}
+.example-2 .icon-content .a[data-social="youtube"] .filled {
+    background-color: #ff0000;
+}
+.example-2 .icon-content .a[data-social="youtube"] ~ .tooltip {
+    background-color: #ff0000;
+    left: 0px;
+    transform: translateX(-110%);
+}
+
+.jello:hover {
+    animation: jello-horizontal 0.9s linear both;
+}
+@keyframes jello-horizontal {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
 }

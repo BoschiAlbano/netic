@@ -23,7 +23,7 @@ const FormularioComponent = () => {
 
             <TitleComponent
                 h1="completa el formulario con tus datos y estaremos en contacto lo mas rapido posible"
-                span="nuestro servicio de fibra optica"
+                span=""
                 strong="CONTRATA AHORA"
             />
 

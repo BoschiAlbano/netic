@@ -51,8 +51,8 @@ const TutorialesComponent = () => {
             <div className="z-10 circulo bg-[#fa00f615] top-0  right-0 "></div>
 
             <TitleComponent
-                h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
-                span=""
+                h1=""
+                span="Si tienes alguna duda puedes consultar nuestros tutoriales"
                 strong="Tutoriales"
             />
 

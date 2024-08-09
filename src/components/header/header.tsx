@@ -20,20 +20,10 @@ const Header = () => {
     return (
         <header
             className={`fixed h-[80px] z-40 w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
-                prevScrollY <= 300 ? "efecto-clase2" : "efecto-clase1"
+                prevScrollY <= 50 ? "efecto-clase2" : "efecto-clase1"
             } `}
         >
             <div className="  h-full sm:w-[150px] w-[75px] relative flex flex-col justify-start items-start">
-                <Link
-                    href="/"
-                    className="  absolute w-full h-full top-0 left-0 z-10"
-                >
-                    <img
-                        className=" h-full w-full  object-contain    "
-                        src="/logoBlanco.png"
-                        alt="logo de Netic"
-                    />
-                </Link>
                 <Link
                     href="/"
                     className=" efecto-logo absolute  w-full h-full top-0 left-0 z-20 "
@@ -46,7 +36,7 @@ const Header = () => {
                 </Link>
             </div>
 
-            <div className="h-full flex flex-row  justify-center items-center  sm:px-10 px-5 sm:py-4 py-0 sm:gap-10 gap-4 font-bold texto-responsive-15     ">
+            <div className="h-full flex flex-row  justify-center items-center sm:py-4 py-0 sm:gap-10 gap-4 font-bold sm:text-xl text-sm   ">
                 <Link className="subrayar" href="/">
                     HOME
                 </Link>
@@ -54,7 +44,10 @@ const Header = () => {
                     Planes
                 </Link>
 
-                <Link className="subrayar" href="/contratar">
+                <Link
+                    className="jello boton bg-[var(--Color1)] py-2 px-4 rounded-[5px] text-white transition-all duration-500"
+                    href="/contratar"
+                >
                     Contratar
                 </Link>
             </div>

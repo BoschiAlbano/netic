@@ -31,7 +31,7 @@ const steps = [
 const TarjetasBanner = () => {
     return (
         <section
-            className={`animar-tarjetas sm:absolute sm:bottom-[12rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
+            className={` animar-tarjetas sm:absolute sm:bottom-[12rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
         >
             {steps.map((step, index) => {
                 return <Tarj key={index} step={step} />;
@@ -62,20 +62,17 @@ function Tarj({
         <div
             // efecto-show-scroll
             ref={refScreeen}
-            className={` w-[80%] sm:w-auto flex flex-row justify-center items-center rounded-[5px] py-2 px-4    gap-4 sm:min-h-[80px] min-h-[50px] blur-effect hover:bg-[var(--Color4)] ${
+            className={` w-[80%] sm:w-auto flex flex-row justify-center items-center rounded-[5px] py-2 px-4 sm:gap-10 gap-5 sm:min-h-[80px] min-h-[50px]  hover:bg-[var(--Color4)] ${
                 isNearScreen ? "efecto-show" : "opacity-0"
             }`}
         >
             <div className="h-[auto] grid place-items-center">
-                <img src={step.icon} className=" sm:w-[60px] w-[40px]" />
+                <img src={step.icon} className=" sm:w-[80px] w-[40px]" />
             </div>
-            <div className="flex flex-col items-center text-center w-full">
-                <h3 className="texto-responsive-20 font-semibold">
+            <div className="flex flex-col items-start text-center w-full">
+                <h3 className=" sm:text-2xl text-lg font-semibold">
                     {step.title}
                 </h3>
-                {/* <p className="texto-responsive-15 text-gray-600">
-                                    {step.description}
-                                </p> */}
             </div>
         </div>
     );

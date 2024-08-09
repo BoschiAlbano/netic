@@ -19,17 +19,21 @@ const TitleComponent = ({ h1, span, strong }: titlecomponent) => {
     return (
         <div
             ref={refScreeen}
-            className={`sm:w-[100%] w-[80%] z-30 relative grid place-items-center sm:my-2 my-6 ${
+            className={` w-[100%] z-30 relative grid place-items-center sm:my-2 my-6 ${
                 isNearScreen ? "efecto-show" : "opacity-0"
             }`}
         >
-            <div className="texto-responsive-40 font-bold flex flex-col justify-center items-center ">
-                <strong className=" text-[var(--Color1)] font-extrabold ">
+            <div className=" font-bold flex flex-col justify-center items-center ">
+                <strong className="sm:text-5xl text-3xl text-[var(--Color1)] font-extrabold sm:mb-5 mb-2 ">
                     {strong}{" "}
                 </strong>
-                <span className="text-center">{span}</span>
+                <span className="sm:text-4xl text-sm text-gray-700 text-center sm:mb-5 mb-2">
+                    {span}
+                </span>
             </div>
-            <h1 className="texto-responsive-20 text-center">{h1}</h1>
+            <h1 className="sm:text-2xl text-sm text-gray-700 text-center sm:flex hidden">
+                {h1}
+            </h1>
         </div>
     );
 };

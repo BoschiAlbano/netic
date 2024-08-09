@@ -5,7 +5,7 @@ const Facebook = (props: SVGProps<SVGSVGElement>) => (
         xmlns="http://www.w3.org/2000/svg"
         width={"1rem"}
         height={"1rem"}
-        fill="FAFBFB"
+        fill="currentColor"
         stroke="currentColor"
         strokeWidth={0}
         viewBox="0 0 37 37"

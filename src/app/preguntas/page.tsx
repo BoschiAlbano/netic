@@ -11,11 +11,11 @@ interface pregunta {
 
 const preguntas: pregunta[] = [
     {
-        title: "¿COMO CAMBIO LA CONTRASEÑA DE MI WIFI?",
+        title: "¿CAMBIO DE CONTRASEÑA WIFI?",
         answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
     },
     {
-        title: "TENGO LENTITUD Y CORTES EN EL SERVICIO",
+        title: "LENTITUD Y CORTES EN EL SERVICIO",
         answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
     },
     {
@@ -148,9 +148,7 @@ const Accordion = ({ title = "", answer = "" }) => {
                 onClick={() => setAccordionOpen(!accordionOpen)}
                 className="flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-[var(--Color1)] hover:bg-gray-100 hover:text-gray-700"
             >
-                <span className="text-sm font-medium texto-responsive-25">
-                    {title}
-                </span>
+                <span className="sm:text-2xl text-md font-medium">{title}</span>
                 <span
                     className={`shrink-0 transition duration-300 ${
                         accordionOpen ? "-rotate-180" : "rotate-0"
@@ -178,7 +176,7 @@ const Accordion = ({ title = "", answer = "" }) => {
                 }  space-y-1 px-4 `}
             >
                 <div
-                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg text-sm font-medium text-[var(--Color1)] hover:bg-gray-100 hover:text-gray-700 texto-responsive-15 ${
+                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-[var(--Color1)] hover:bg-gray-100 hover:text-gray-700 sm:text-lg text-sm ${
                         accordionOpen ? "block" : ""
                     }`}
                 >
