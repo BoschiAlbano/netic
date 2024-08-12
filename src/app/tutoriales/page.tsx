@@ -1,9 +1,11 @@
 "use client";
 import Header from "@/components/header/header";
-import React, { useEffect, useState } from "react";
-import YouTubePlayer from "react-player/youtube";
+const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
+    ssr: false,
+});
 import useNerScreen from "@/app/hooks/useNerScreen";
 import TitleComponent from "@/components/titles/title.component";
+import dynamic from "next/dynamic";
 
 interface video {
     url: string;
@@ -51,19 +53,6 @@ const videos: video[] = [
 ];
 
 const Tutoriales = () => {
-    const [state, setstate] = useState(false);
-
-    useEffect(() => {
-        setstate(true);
-    }, []);
-
-    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-        {
-            distance: "0px",
-            once: true,
-        }
-    );
-
     return (
         <>
             <Header />
@@ -76,24 +65,17 @@ const Tutoriales = () => {
                 />
 
                 <section className=" w-[90%]">
-                    <div
-                        ref={refScreeen}
-                        className={` grilla-tutoriales z-30 sm:mt-20 mt-10 ${
-                            isNearScreen ? "efecto-show" : "opacity-0"
-                        }`}
-                    >
-                        {/* efecto-show-scroll */}
-                        {state &&
-                            videos.map((item, index) => {
-                                return (
-                                    <Video
-                                        key={index}
-                                        url={item.url}
-                                        titulo={item.titulo}
-                                        descripcion={item.descripcion}
-                                    />
-                                );
-                            })}
+                    <div className={` grilla-tutoriales z-30 sm:mt-20 mt-10 `}>
+                        {videos.map((item, index) => {
+                            return (
+                                <Video
+                                    key={index}
+                                    url={item.url}
+                                    titulo={item.titulo}
+                                    descripcion={item.descripcion}
+                                />
+                            );
+                        })}
                     </div>
                 </section>
             </div>
@@ -112,8 +94,20 @@ function Video({
     descripcion: string;
     url: string;
 }) {
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
+
     return (
-        <div className="w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect ">
+        <div
+            ref={refScreeen}
+            className={`${
+                isNearScreen ? "efecto-show" : "opacity-0"
+            } w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect `}
+        >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                 {/* efecto-show-scroll */}
                 <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">

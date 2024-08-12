@@ -3,15 +3,49 @@ import React from "react";
 import TitleComponent from "../titles/title.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Link from "next/link";
+
+interface tarjeta {
+    plan: string;
+    c1: string;
+    c2: string;
+    c3: string;
+    c4: string;
+    scale: boolean;
+}
+
+const tarjeta: tarjeta[] = [
+    {
+        plan: "50",
+        c1: "Navegá sin limites",
+        c2: "Streaming sin interrupciones",
+        c3: "Jugá en linea sin fluctuaciones",
+        c4: "hasta 200Mbps de bajada",
+        scale: false,
+    },
+    {
+        plan: "100",
+        c1: "Navegá sin limites",
+        c2: "Streaming sin interrupciones",
+        c3: "Jugá en linea sin fluctuaciones",
+        c4: "hasta 200Mbps de bajada",
+        scale: true,
+    },
+    {
+        plan: "200",
+        c1: "Navegá sin limites",
+        c2: "Streaming sin interrupciones",
+        c3: "Jugá en linea sin fluctuaciones",
+        c4: "hasta 200Mbps de bajada",
+        scale: false,
+    },
+];
+
 const TarjetaPlanesComponent = () => {
     return (
         <section
-            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0  sm:min-h-screen sm:h-full h-full `}
+            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0  sm:min-h-screen sm:h-full h-full gap-10 `}
         >
             <div id="IdPlanesWifi"></div>
-
-            <div className="z-10 circulo bg-[#fa00f615] top-0 right-0"></div>
-            <div className="z-10 circulo bg-[#3021722f]  bottom-0 left-0"></div>
 
             <TitleComponent
                 h1="Conocé nuestros servicios de fibra óptica y elegí la opción
@@ -21,89 +55,87 @@ const TarjetaPlanesComponent = () => {
             />
 
             <div className={`w-full z-30 relative sm:my-20 my-0  `}>
-                <Tarjeta2 />
+                <div className={`grillaPlanes  `}>
+                    {tarjeta.map((item, index) => {
+                        return (
+                            <Tarjeta
+                                key={index}
+                                plan={item.plan}
+                                c1={item.c1}
+                                c2={item.c2}
+                                c3={item.c3}
+                                c4={item.c4}
+                                scale={item.scale}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
 };
 export default TarjetaPlanesComponent;
 
-function Tarjeta2() {
+function Tarjeta({ plan, c1, c2, c3, c4, scale }: tarjeta) {
     const { elementRef: refScreeenCar1, isNearScreen: isNearScreenCar1 } =
         useNerScreen({
             distance: "0px",
             once: true,
         });
 
+    if (scale) {
+        return (
+            <div
+                ref={refScreeenCar1}
+                id="professional"
+                className={`box  ${
+                    isNearScreenCar1 ? "efecto-show-professional" : "opacity-0"
+                }`}
+            >
+                <p className="title">PLAN</p>
+                <div className="price">
+                    <b>{plan}</b>
+                    <span>Mbps</span>
+                </div>
+
+                <div className="features">
+                    <div>{c1}</div>
+                    <div>{c2}</div>
+                    <div>{c3}</div>
+                    <div>{c4}</div>
+                </div>
+
+                <div className="button">
+                    <Link href={"/contratar"}>
+                        <button>Contratar</button>
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div
             ref={refScreeenCar1}
-            className={`grillaPlanes  ${
-                isNearScreenCar1 ? "efecto-show" : "opacity-0"
-            }`}
+            className={`box  ${isNearScreenCar1 ? "efecto-show" : "opacity-0"}`}
         >
-            {/* efecto-show-scroll */}
-            <div className="box  ">
-                <p className="title">PLAN</p>
-                <div className="price">
-                    <b>50</b>
-                    <span>Mbps</span>
-                </div>
-
-                <div className="features">
-                    <div>Navegá sin limites</div>
-                    <div>Streaming sin interrupciones</div>
-                    <div>Jugá en linea sin fluctuaciones</div>
-                    <div>hasta 50Mbps de bajada</div>
-                </div>
-
-                <div className="button">
-                    <Link href={"/contratar"}>
-                        <button>Contratar</button>
-                    </Link>
-                </div>
+            <p className="title">PLAN</p>
+            <div className="price">
+                <b>{plan}</b>
+                <span>Mbps</span>
             </div>
-            {/* efecto-show-scroll-sin-scale */}
-            <div className="box  professional">
-                <p className="title">PLAN</p>
-                <div className="price">
-                    <b>100</b>
-                    <span>Mbps</span>
-                </div>
 
-                <div className="features">
-                    <div>Navegá sin limites</div>
-                    <div>Streaming sin interrupciones</div>
-                    <div>Jugá en linea sin fluctuaciones</div>
-                    <div>hasta 100Mbps de bajada</div>
-                </div>
-
-                <div className="button">
-                    <Link href={"/contratar/"}>
-                        <button>Contratar</button>
-                    </Link>
-                </div>
+            <div className="features">
+                <div>{c1}</div>
+                <div>{c2}</div>
+                <div>{c3}</div>
+                <div>{c4}</div>
             </div>
-            {/* efecto-show-scroll */}
-            <div className="box ">
-                <p className="title">PLAN</p>
-                <div className="price">
-                    <b>200</b>
-                    <span>Mbps</span>
-                </div>
 
-                <div className="features">
-                    <div>Navegá sin limites</div>
-                    <div>Streaming sin interrupciones</div>
-                    <div>Jugá en linea sin fluctuaciones</div>
-                    <div>hasta 200Mbps de bajada</div>
-                </div>
-
-                <div className="button">
-                    <Link href={"/contratar"}>
-                        <button>Contratar</button>
-                    </Link>
-                </div>
+            <div className="button">
+                <Link href={"/contratar"}>
+                    <button>Contratar</button>
+                </Link>
             </div>
         </div>
     );

@@ -1,10 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import YouTubePlayer from "react-player/youtube";
+const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
+    ssr: false,
+});
 import TitleComponent from "../titles/title.component";
 import BotonesComponent from "../buttons/button.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
-
+import dynamic from "next/dynamic";
 interface video {
     url: string;
     titulo: string;
@@ -33,47 +34,24 @@ const videos: video[] = [
 ];
 
 const TutorialesComponent = () => {
-    const [state, setstate] = useState(false);
-
-    useEffect(() => {
-        setstate(true);
-    }, []);
-
-    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-        {
-            distance: "0px",
-            once: true,
-        }
-    );
     return (
-        <section className="relative w-[90%]  z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen sm:h-full h-full gap-10">
-            <div className="z-10 circulo bg-[#3021722f] bottom-0 left-0"></div>
-            <div className="z-10 circulo bg-[#fa00f615] top-0  right-0 "></div>
-
+        <section className="relative w-[90%]  z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen h-full gap-10">
             <TitleComponent
                 h1=""
                 span="Si tienes alguna duda puedes consultar nuestros tutoriales"
                 strong="Tutoriales"
             />
-
-            <div
-                ref={refScreeen}
-                className={`grilla-tutoriales z-30 ${
-                    isNearScreen ? "efecto-show" : "opacity-0"
-                }`}
-            >
-                {/* efecto-show-scroll */}
-                {state &&
-                    videos.map((item, index) => {
-                        return (
-                            <Video
-                                key={index}
-                                url={item.url}
-                                titulo={item.titulo}
-                                descripcion={item.descripcion}
-                            />
-                        );
-                    })}
+            <div className={`grilla-tutoriales z-30  sm:pt-20 pt-5 `}>
+                {videos.map((item, index) => {
+                    return (
+                        <Video
+                            key={index}
+                            url={item.url}
+                            titulo={item.titulo}
+                            descripcion={item.descripcion}
+                        />
+                    );
+                })}
             </div>
 
             <BotonesComponent texto="Ver mas" page="tutoriales" />
@@ -92,8 +70,20 @@ function Video({
     descripcion: string;
     url: string;
 }) {
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
+
     return (
-        <div className="w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect ">
+        <div
+            ref={refScreeen}
+            className={`${
+                isNearScreen ? "efecto-show" : "opacity-0"
+            } w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect `}
+        >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                 {/* efecto-show-scroll */}
                 <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">

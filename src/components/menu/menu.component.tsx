@@ -5,7 +5,7 @@ import Whatsapp from "../svg/icons/whatsapp.svg";
 
 const MenuComponent = () => {
     return (
-        <ul className="example-2 h-screen fixed z-[990]  top-0 opacity-0 right-0  show-menu">
+        <ul className="example-2 h-screen fixed z-[990]  top-0 opacity-0 right-0  show-menu blur-effect">
             <li className="icon-content">
                 <section
                     data-social="Facebook"

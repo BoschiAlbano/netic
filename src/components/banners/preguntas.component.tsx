@@ -2,100 +2,72 @@
 
 import React from "react";
 import Accordion from "../accordion/accordion.component";
-// import useNerScreen from "@/app/hooks/useNerScreen";
+import useNerScreen from "@/app/hooks/useNerScreen";
+import BotonesComponent from "../buttons/button.component";
+
+interface pregunta {
+    title: string;
+    answer: string;
+}
+
+const preguntas: pregunta[] = [
+    {
+        title: "¿CAMBIO DE CONTRASEÑA WIFI?",
+        answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
+    },
+    {
+        title: "LENTITUD Y CORTES EN EL SERVICIO",
+        answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
+    },
+    {
+        title: "NO TENGO SERVICIO",
+        answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
+    },
+    {
+        title: "¿QUE HACER SI DEBO MUDARME?",
+        answer: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa beatae ab, minus distinctio laudantium quaerat praesentium illo enim vitae nulla amet aperiam accusamus incidunt. Est ratione reiciendis veritatis vitae expedita.",
+    },
+];
 
 const PreguntasComponet = () => {
-    // const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-    //     {
-    //         distance: "0px",
-    //         once: false,
-    //     }
-    // );
-
-    //
+    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+        {
+            distance: "0px",
+            once: true,
+        }
+    );
     return (
         <section
-            className={` relative w-[100%] h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5  `}
+            ref={refScreeen}
+            className={` ${
+                isNearScreen ? "efecto-show" : "opacity-0"
+            } rounded-xl relative sm:w-[90%] w-full h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5 blur-effect shadow-header sm:mt-10 mt-0 bg-red-300`}
         >
             <div className="w-[100%] z-30 relative grid place-items-center">
                 <div className=" sm:text-6xl text-3xl sm:mb-5 mb-2 font-bold">
-                    <strong className=" text-white font-extrabold">
+                    <strong className=" text-[var(--Color1)] font-extrabold">
                         Preguntas
                     </strong>
-                    <span className="text-gray-400"> Frecuentes</span>
+                    <span className="text-[#374151]"> Frecuentes</span>
                 </div>
-                <h1 className="sm:text-3xl text-sm xm:mb-5 mb-2 text-gray-400">
+                <h1 className="sm:text-3xl text-sm xm:mb-5 mb-2 text-[#374151]">
                     Todo lo que nesecitas saber de nuesto servicio
                 </h1>
             </div>
 
-            <div className=" sm:w-[60%] w-[100%]  flex flex-col justify-start items-center ">
-                <Accordion
-                    title="¿ Como contratar NETIC fibra obtica ?"
-                    answer="Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ipsa beatae ab, minus
-                                distinctio laudantium quaerat praesentium illo
-                                enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita."
-                />
-                <Accordion
-                    title="¿ Como contratar NETIC fibra obtica ?"
-                    answer="Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ipsa beatae ab, minus
-                                distinctio laudantium quaerat praesentium illo
-                                enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita."
-                />
-
-                <Accordion
-                    title="¿ Como contratar NETIC fibra obtica ?"
-                    answer="Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Ipsa beatae ab, minus
-                                distinctio laudantium quaerat praesentium illo
-                                enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita. Lorem, ipsum dolor sit amet
-                                consectetur adipisicing elit. Ipsa beatae ab,
-                                minus distinctio laudantium quaerat praesentium
-                                illo enim vitae nulla amet aperiam accusamus
-                                incidunt. Est ratione reiciendis veritatis vitae
-                                expedita."
-                />
+            <div className="sm:mt-10 mt-5 sm:w-[60%] w-[100%]  flex flex-col justify-start items-center ">
+                {preguntas.map((item, index) => {
+                    return (
+                        <Accordion
+                            key={index}
+                            title={item.title}
+                            answer={item.answer}
+                        />
+                    );
+                })}
             </div>
 
-            <a
-                href="/preguntas"
-                className=" font-bold text-white sm:text-2xl text-sm xm:mb-5 mb-2 border-[1px] shadow-xl py-2 px-2 rounded-[5px] hover:bg-slate-200  hover:text-black"
-            >
-                mas preguntas
-            </a>
+            <BotonesComponent texto="Mas Preguntas" page="/preguntas" />
         </section>
     );
 };

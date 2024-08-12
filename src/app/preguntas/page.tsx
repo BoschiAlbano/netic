@@ -52,7 +52,7 @@ const Preguntas = () => {
         <>
             <Header />
 
-            <section className=" w-full pt-[80px] flex flex-col justify-center items-center  ">
+            <section className=" w-full pt-[80px] flex flex-col justify-center items-center ">
                 <TitleComponent
                     h1="¿ Tienes alguna duda ?"
                     span=""

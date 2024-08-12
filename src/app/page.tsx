@@ -10,9 +10,12 @@ import MapaComponent from "@/components/mapa/mapa.component";
 
 export default function Home() {
     return (
-        <main className="w-full min-h-screen h-full relative flex flex-col  items-center mostrar  ">
-            {/* Menu */}
+        <main className="w-full min-h-screen h-full relative flex flex-col  items-center mostrar   ">
             <Header />
+
+            <section className=" sm:block hidden">
+                <ParticlesComponent />
+            </section>
 
             <div className=" z-10 w-full sm:h-full h-screen absolute top-0 left-0 contenedor "></div>
 
@@ -34,37 +37,15 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* menu redes sm:block hidden */}
-            <div className=" ">
-                <MenuComponent />
-            </div>
+            <MenuComponent />
 
-            {/* <div className=" relative  w-full h-[500px] bg-[--Color1] z-[1000]">
-                <ParticlesComponent />
-            </div> */}
-
-            {/* seguridad */}
-
-            {/* Planes */}
             <Planes />
 
-            {/* Mapa */}
             <MapaComponent />
 
-            {/* tutoriales */}
             <TutorialesComponent />
 
-            {/* Preguntas Frecuentes */}
-
-            <div className=" relative  w-full  bg-[#23174f] z-[900]">
-                <div className=" w-full h-full absolute z-10">
-                    <ParticlesComponent />
-                </div>
-
-                <Preguntas />
-            </div>
-
-            {/* pruebas  */}
+            <Preguntas />
         </main>
     );
 }
