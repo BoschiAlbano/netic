@@ -58,6 +58,7 @@ const MapaComponent = () => {
                     {contacto.map((item, index) => {
                         return (
                             <Contacto
+                                key={index}
                                 Icono={item.Icono}
                                 parrafo={item.parrafo}
                                 subtitulo={item.subtitulo}
