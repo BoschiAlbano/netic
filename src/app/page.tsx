@@ -2,20 +2,16 @@ import Preguntas from "../components/banners/preguntas.component";
 import BotonesComponent from "../components/buttons/button.component";
 import Header from "../components/header/header";
 import MenuComponent from "../components/menu/menu.component";
-import ParticlesComponent from "../components/particles/particles";
 import Planes from "../components/tarjetas/planes.component";
 import TutorialesComponent from "../components/tutoriales/tutoriales.component";
 import TarjetasBanner from "@/components/tarjetas/tarjetas.planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
     return (
         <main className="w-full min-h-screen h-full relative flex flex-col  items-center mostrar   ">
             <Header />
-
-            <section className=" sm:block hidden">
-                <ParticlesComponent />
-            </section>
 
             <div className=" z-10 w-full sm:h-full h-screen absolute top-0 left-0 contenedor "></div>
 
@@ -46,6 +42,8 @@ export default function Home() {
             <TutorialesComponent />
 
             <Preguntas />
+
+            <Footer />
         </main>
     );
 }

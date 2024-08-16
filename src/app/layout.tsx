@@ -9,7 +9,7 @@ import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 import { Toaster } from "sonner";
-import Footer from "@/components/footer/footer";
+import ParticlesComponent from "@/components/particles/particles";
 const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -30,8 +30,10 @@ export default function RootLayout({
         <html lang="en">
             <body className={montserrat.className}>
                 <section className=" min-h-screen h-full flex flex-col justify-between">
+                    <section className=" sm:block hidden">
+                        <ParticlesComponent />
+                    </section>
                     {children}
-                    <Footer />
                 </section>
             </body>
             <Toaster richColors />

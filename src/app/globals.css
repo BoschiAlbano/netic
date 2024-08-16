@@ -173,9 +173,9 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    background: #fafafa10;
-    backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem);
+    background: #fafafaa6;
+    /* backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem); */
     -webkit-box-shadow: 0px 0px 50px 5px var(--Color4);
     -moz-box-shadow: 0px 0px 50px 5px var(--Color4);
     box-shadow: 0px 0px 50px 5px var(--Color4);
@@ -1447,4 +1447,18 @@ ul {
     100% {
         transform: scale3d(1, 1, 1);
     }
+}
+
+.footer {
+    position: relative;
+}
+
+.footer::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    height: 5px;
+    width: 90%;
+    background: var(--Color1);
+    border-radius: 1.5rem;
 }

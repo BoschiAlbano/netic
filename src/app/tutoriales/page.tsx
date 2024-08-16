@@ -6,6 +6,7 @@ const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
 import useNerScreen from "@/app/hooks/useNerScreen";
 import TitleComponent from "@/components/titles/title.component";
 import dynamic from "next/dynamic";
+import Footer from "@/components/footer/footer";
 
 interface video {
     url: string;
@@ -79,6 +80,7 @@ const Tutoriales = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </>
     );
 };

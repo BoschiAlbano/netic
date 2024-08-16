@@ -3,6 +3,7 @@ import Header from "@/components/header/header";
 import TitleComponent from "@/components/titles/title.component";
 import React, { useState } from "react";
 import useNerScreen from "../hooks/useNerScreen";
+import Footer from "@/components/footer/footer";
 
 interface pregunta {
     title: string;
@@ -77,6 +78,8 @@ const Preguntas = () => {
                     <Card />
                 </div>
             </section>
+
+            <Footer />
         </>
     );
 };

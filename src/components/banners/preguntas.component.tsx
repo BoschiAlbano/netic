@@ -41,7 +41,8 @@ const PreguntasComponet = () => {
             ref={refScreeen}
             className={` ${
                 isNearScreen ? "efecto-show" : "opacity-0"
-            } rounded-xl relative sm:w-[90%] w-full h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5 blur-effect shadow-header sm:mt-10 mt-0 bg-red-300`}
+            } rounded-xl relative sm:w-[90%] w-full h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5 sm:mt-10 mt-0 `}
+            // blur-effect shadow-header
         >
             <div className="w-[100%] z-30 relative grid place-items-center">
                 <div className=" sm:text-6xl text-3xl sm:mb-5 mb-2 font-bold">
