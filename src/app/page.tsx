@@ -33,7 +33,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <img src="/Banner.png" alt="" className=" w-[80%] " />
+                    <img src="/banner.png" alt="" className=" w-[80%] " />
                 </div>
 
                 <div>
