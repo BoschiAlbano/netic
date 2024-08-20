@@ -43,6 +43,18 @@ const FormularioSubmit = () => {
             action={dispatch}
             className=" flex flex-col justify-between items-center gap-4"
         >
+            <div className="w-[100%] z-30 relative grid place-items-center">
+                <div className=" sm:text-6xl text-3xl sm:mb-5 mb-2 font-bold">
+                    <strong className=" text-[var(--Color1)] font-extrabold">
+                        Contrata
+                    </strong>
+                    <span className="text-[#374151]"> Ahora</span>
+                </div>
+                <h1 className="sm:text-3xl text-sm xm:mb-5 mb-2 text-[#374151]">
+                    estaremos en contacto lo mas pronto posible
+                </h1>
+            </div>
+
             <InputComponent
                 name="Nombre"
                 palabra="Nombre y Apellido"

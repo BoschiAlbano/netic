@@ -9,7 +9,10 @@ import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 import { Toaster } from "sonner";
-import ParticlesComponent from "@/components/particles/particles";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
+import MenuComponent from "@/components/menu/menu.component";
+// import ParticlesComponent from "@/components/particles/particles";
 const montserrat = Montserrat({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -29,11 +32,19 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={montserrat.className}>
-                <section className=" min-h-screen h-full flex flex-col justify-between">
-                    <section className=" sm:block hidden">
-                        <ParticlesComponent />
-                    </section>
-                    {children}
+                <section className=" sm:min-h-screen sm:h-full flex flex-col justify-between relative">
+                    {/* circulos */}
+                    {/* <div className="z-30 circulo-fixed bg-[#fa00f613] top-0 right-0"></div>
+                    <div className="z-30 circulo-fixed bg-[#fa00f613] bottom-0 sm:right-[60%] right-[50%]"></div>
+                    <div className="z-30 circulo-fixed bg-[#3021721f] sm:top-0 top-[20%] right-[50%]"></div>
+                    <div className="z-30 circulo-fixed bg-[#3021721f] sm:bottom-[0%] bottom-[20%]  sm:right-[10%] right-[0%]"></div> */}
+
+                    <MenuComponent />
+
+                    <Header />
+
+                    <section className="z-40 pt-[80px]">{children}</section>
+                    <Footer />
                 </section>
             </body>
             <Toaster richColors />

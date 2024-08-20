@@ -3,25 +3,26 @@ import useNerScreen from "@/app/hooks/useNerScreen";
 import React from "react";
 const steps = [
     {
-        icon: "/iconos/routerIcon.png",
+        icon: "/iconos/1.png",
         title: "Elige la tarifa",
         description:
             "Podrás elegir entre 300Mb, 600Mb y 1Gb. Así pagarás sólo por lo que necesites.",
     },
     {
-        icon: "/iconos/mapIcon.png",
+        icon: "/iconos/2.png",
         title: "Consulta tu cobertura",
         description:
             "Tendrás que introducir tu dirección para asegurarnos de que la fibra de Netic llega a tu casa.",
     },
     {
-        icon: "/iconos/calendarioIcon.png",
+        icon: "/iconos/3.png",
         title: "Cita de instalación",
         description:
             "Una vez contratado, un experto se pondrá en contacto contigo para concertar la fecha de instalación que más te convenga. ¡Tú eliges!",
     },
     {
-        icon: "/iconos/toolsIcon.png",
+        icon: "/iconos/4.png",
+
         title: "Día de instalación",
         description:
             "El técnico llevará un router WiFi ¡Lo tendrás listo en un par de horas!",
@@ -31,7 +32,7 @@ const steps = [
 const TarjetasBanner = () => {
     return (
         <section
-            className={` animar-tarjetas sm:absolute sm:bottom-[12rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
+            className={` animar-tarjetas sm:absolute sm:bottom-[1rem] left-[0%] w-full z-30 flex flex-row justify-center items-center sm:gap-10 gap-2 flex-wrap `}
         >
             {steps.map((step, index) => {
                 return <Tarj key={index} step={step} />;
@@ -67,10 +68,10 @@ function Tarj({
             }`}
         >
             <div className="h-[auto] grid place-items-center">
-                <img src={step.icon} className=" sm:w-[80px] w-[40px]" />
+                <img src={step.icon} className=" sm:w-[60px] w-[40px]" />
             </div>
             <div className="flex flex-col items-start text-center w-full">
-                <h3 className=" sm:text-2xl text-lg font-semibold">
+                <h3 className=" sm:text-xl text-lg font-semibold">
                     {step.title}
                 </h3>
             </div>

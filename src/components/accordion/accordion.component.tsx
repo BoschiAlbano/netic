@@ -8,7 +8,7 @@ const Accordion = ({ title = "", answer = "" }) => {
         <div className="py-0">
             <button
                 onClick={() => setAccordionOpen(!accordionOpen)}
-                className="flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-[var(--Color1)]  hover:text-gray-700"
+                className="flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-black  hover:text-gray-700"
             >
                 <span className="sm:text-2xl text-md font-medium">{title}</span>
                 <span
@@ -38,7 +38,7 @@ const Accordion = ({ title = "", answer = "" }) => {
                 }  space-y-1 px-4 `}
             >
                 <div
-                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-[var(--Color1)]  hover:text-gray-700 sm:text-lg text-sm ${
+                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-black  hover:text-gray-700 sm:text-lg text-sm ${
                         accordionOpen ? "block" : ""
                     }`}
                 >

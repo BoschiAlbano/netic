@@ -1,12 +1,10 @@
 "use client";
-import Header from "@/components/header/header";
 const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
     ssr: false,
 });
 import useNerScreen from "@/app/hooks/useNerScreen";
 import TitleComponent from "@/components/titles/title.component";
 import dynamic from "next/dynamic";
-import Footer from "@/components/footer/footer";
 
 interface video {
     url: string;
@@ -56,8 +54,6 @@ const videos: video[] = [
 const Tutoriales = () => {
     return (
         <>
-            <Header />
-
             <div className="w-full pt-[80px] flex flex-col justify-center items-center">
                 <TitleComponent
                     h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
@@ -80,7 +76,6 @@ const Tutoriales = () => {
                     </div>
                 </section>
             </div>
-            <Footer />
         </>
     );
 };

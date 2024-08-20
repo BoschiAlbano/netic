@@ -4,6 +4,7 @@ import React from "react";
 import Accordion from "../accordion/accordion.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import BotonesComponent from "../buttons/button.component";
+import TitleComponent from "../titles/title.component";
 
 interface pregunta {
     title: string;
@@ -41,22 +42,14 @@ const PreguntasComponet = () => {
             ref={refScreeen}
             className={` ${
                 isNearScreen ? "efecto-show" : "opacity-0"
-            } rounded-xl relative sm:w-[90%] w-full h-full  z-30  grid place-items-center sm:gap-8 gap-2 sm:p-10 p-5 sm:mt-10 mt-0 `}
-            // blur-effect shadow-header
+            } rounded-xl relative sm:w-[90%] w-full h-full  z-30  grid place-items-center `}
         >
-            <div className="w-[100%] z-30 relative grid place-items-center">
-                <div className=" sm:text-6xl text-3xl sm:mb-5 mb-2 font-bold">
-                    <strong className=" text-[var(--Color1)] font-extrabold">
-                        Preguntas
-                    </strong>
-                    <span className="text-[#374151]"> Frecuentes</span>
-                </div>
-                <h1 className="sm:text-3xl text-sm xm:mb-5 mb-2 text-[#374151]">
-                    Todo lo que nesecitas saber de nuesto servicio
-                </h1>
-            </div>
-
-            <div className="sm:mt-10 mt-5 sm:w-[60%] w-[100%]  flex flex-col justify-start items-center ">
+            <TitleComponent
+                h1="Todo lo que nesecitas saber de nuesto servicio"
+                span="Frecuentes"
+                strong="Preguntas"
+            />
+            <div className="sm:w-[60%] w-[100%]  flex flex-col justify-start items-center mt-10 mb-4 ">
                 {preguntas.map((item, index) => {
                     return (
                         <Accordion

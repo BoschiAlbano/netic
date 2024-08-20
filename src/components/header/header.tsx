@@ -19,11 +19,11 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed h-[80px] z-40 w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
+            className={` fixed h-[80px] top-0 z-50 w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
                 prevScrollY <= 50 ? "efecto-clase2" : "efecto-clase1"
             } `}
         >
-            <div className="  h-full sm:w-[150px] w-[75px] relative flex flex-col justify-start items-start">
+            <div className="  h-full sm:w-[120px] w-[75px] relative flex flex-col justify-start items-start">
                 <Link
                     href="/"
                     className=" efecto-logo absolute  w-full h-full top-0 left-0 z-20 "
@@ -36,7 +36,7 @@ const Header = () => {
                 </Link>
             </div>
 
-            <div className="h-full flex flex-row  justify-center items-center sm:py-4 py-0 sm:gap-10 gap-4 font-bold sm:text-xl text-sm   ">
+            <div className="h-full flex flex-row  justify-center items-center sm:py-4 py-0 sm:gap-10 gap-4 font-bold sm:text-lg text-sm   ">
                 <Link className="subrayar" href="/">
                     HOME
                 </Link>

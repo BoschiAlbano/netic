@@ -1,9 +1,7 @@
 "use client";
-import Header from "@/components/header/header";
 import TitleComponent from "@/components/titles/title.component";
 import React, { useState } from "react";
 import useNerScreen from "../hooks/useNerScreen";
-import Footer from "@/components/footer/footer";
 
 interface pregunta {
     title: string;
@@ -51,13 +49,11 @@ const Preguntas = () => {
 
     return (
         <>
-            <Header />
-
-            <section className=" w-full pt-[80px] flex flex-col justify-center items-center ">
+            <section className=" w-full  sm:pt-[80px] flex flex-col justify-center items-center ">
                 <TitleComponent
                     h1="¿ Tienes alguna duda ?"
-                    span=""
-                    strong="Preguntas Frecuentes"
+                    span="Frecuentes"
+                    strong="Preguntas "
                 />
 
                 <div
@@ -66,20 +62,9 @@ const Preguntas = () => {
                         isNearScreen ? "efecto-show" : "opacity-0"
                     }`}
                 >
-                    {/* <div className="w-[30%] h-full sm:min-w-[300px] min-w-[200px]  overflow-hidden flex flex-col justify-start items-center gap-5">
-                        <img
-                            src="/AtencionAlCliente.jpg"
-                            alt=""
-                            className=" bg-white object-contain rounded-full sm:w-[300px] w-[200px] sm:h-[300px] h-[200px]"
-                        />
-
-                        <Whatapp />
-                    </div> */}
                     <Card />
                 </div>
             </section>
-
-            <Footer />
         </>
     );
 };
@@ -89,7 +74,7 @@ export default Preguntas;
 function Card() {
     return (
         /* From Uiverse.io by gharsh11032000 */
-        <div className=" sm:w-[70%] w-full p-4  overflow-hidden  gap-2 flex flex-col justify-start items-center">
+        <div className="  sm:w-[70%] w-full p-4  overflow-hidden  gap-2 flex flex-col justify-start items-center">
             {preguntas.map((item, index) => {
                 return (
                     <Accordion
@@ -149,7 +134,7 @@ const Accordion = ({ title = "", answer = "" }) => {
         <div className="py-0">
             <button
                 onClick={() => setAccordionOpen(!accordionOpen)}
-                className="flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-[var(--Color1)] hover:bg-gray-100 hover:text-gray-700"
+                className=" bg-[#F6F6FD] flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-black "
             >
                 <span className="sm:text-2xl text-md font-medium">{title}</span>
                 <span
@@ -179,7 +164,7 @@ const Accordion = ({ title = "", answer = "" }) => {
                 }  space-y-1 px-4 `}
             >
                 <div
-                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-[var(--Color1)] hover:bg-gray-100 hover:text-gray-700 sm:text-lg text-sm ${
+                    className={`overflow-hidden  px-4 sm:py-2 py-1 mt-2 rounded-lg font-medium text-black bg-[#F6F6FD]  sm:text-lg text-sm ${
                         accordionOpen ? "block" : ""
                     }`}
                 >

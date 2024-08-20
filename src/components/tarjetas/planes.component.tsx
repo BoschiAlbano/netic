@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import TitleComponent from "../titles/title.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Link from "next/link";
+import TitleComponent from "../titles/title.component";
 
 interface tarjeta {
     plan: string;
@@ -11,6 +11,7 @@ interface tarjeta {
     c3: string;
     c4: string;
     scale: boolean;
+    index: number | null;
 }
 
 const tarjeta: tarjeta[] = [
@@ -21,6 +22,7 @@ const tarjeta: tarjeta[] = [
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
         scale: false,
+        index: null,
     },
     {
         plan: "100",
@@ -29,6 +31,7 @@ const tarjeta: tarjeta[] = [
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
         scale: true,
+        index: null,
     },
     {
         plan: "200",
@@ -37,25 +40,23 @@ const tarjeta: tarjeta[] = [
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
         scale: false,
+        index: null,
     },
 ];
 
 const TarjetaPlanesComponent = () => {
     return (
         <section
-            className={` relative sm:w-[90%] w-full z-30 grid place-items-center content-center p-0  sm:min-h-screen sm:h-full h-full gap-10 `}
+            className={`  relative sm:w-[90%] w-full z-30 grid place-items-center content-center `}
         >
-            <div id="IdPlanesWifi"></div>
-
             <TitleComponent
-                h1="Conocé nuestros servicios de fibra óptica y elegí la opción
-                    que mejor se adapte a tus necesidades y preferencias."
-                span="internet la mejor conexión para tu hogar"
+                h1="Tenemos los mejores planes para vos"
+                span="Fibra Optica"
                 strong="PLANES"
             />
 
-            <div className={`w-full z-30 relative sm:my-20 my-0  `}>
-                <div className={`grillaPlanes  `}>
+            <div className={`w-full z-30 relative  mt-20`}>
+                <div className={`grillaPlanes`}>
                     {tarjeta.map((item, index) => {
                         return (
                             <Tarjeta
@@ -66,6 +67,7 @@ const TarjetaPlanesComponent = () => {
                                 c3={item.c3}
                                 c4={item.c4}
                                 scale={item.scale}
+                                index={index}
                             />
                         );
                     })}
@@ -76,7 +78,7 @@ const TarjetaPlanesComponent = () => {
 };
 export default TarjetaPlanesComponent;
 
-function Tarjeta({ plan, c1, c2, c3, c4, scale }: tarjeta) {
+function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
     const { elementRef: refScreeenCar1, isNearScreen: isNearScreenCar1 } =
         useNerScreen({
             distance: "0px",
@@ -117,8 +119,25 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale }: tarjeta) {
     return (
         <div
             ref={refScreeenCar1}
-            className={`box  ${isNearScreenCar1 ? "efecto-show" : "opacity-0"}`}
+            className={`box relative ${
+                isNearScreenCar1 ? "efecto-show" : "opacity-0"
+            } shadow-header`}
         >
+            {index === 2 && (
+                <img
+                    className="absolute sm:top-[-75px] sm:right-[-75px] sm:w-[150px] w-[70px] top-[-30px] right-[-30px]  rotate-[30deg] aspect-square object-contain  "
+                    src="wifi.png"
+                    alt=""
+                />
+            )}
+            {index === 0 && (
+                <img
+                    className="sm:hidden absolute w-[70px] top-[-30px] left-[-30px]  rotate-[-30deg] aspect-square object-contain "
+                    src="wifi.png"
+                    alt=""
+                />
+            )}
+
             <p className="title">PLAN</p>
             <div className="price">
                 <b>{plan}</b>

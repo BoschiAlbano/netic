@@ -35,13 +35,13 @@ const videos: video[] = [
 
 const TutorialesComponent = () => {
     return (
-        <section className="relative w-[90%]  z-30 grid place-items-center content-center p-0 py-10 sm:min-h-screen h-full gap-10">
+        <section className="relative w-[90%]  z-30 grid place-items-center content-center h-full">
             <TitleComponent
-                h1=""
-                span="Si tienes alguna duda puedes consultar nuestros tutoriales"
+                h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
+                span=""
                 strong="Tutoriales"
             />
-            <div className={`grilla-tutoriales z-30  sm:pt-20 pt-5 `}>
+            <div className={`grilla-tutoriales z-30  sm:mt-28 mt-16 mb-10`}>
                 {videos.map((item, index) => {
                     return (
                         <Video
@@ -82,7 +82,7 @@ function Video({
             ref={refScreeen}
             className={`${
                 isNearScreen ? "efecto-show" : "opacity-0"
-            } w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect `}
+            } w-full sm:h-[500px] flex flex-col rounded-xl bg-white bg-clip-border text-gray-700  `}
         >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                 {/* efecto-show-scroll */}
