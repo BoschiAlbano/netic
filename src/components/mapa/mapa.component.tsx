@@ -148,7 +148,7 @@ function Map() {
             <img
                 className="absolute z-[99] sm:top-[-130px] sm:left-[-75px] sm:w-[150px]
                     w-[100px] top-[-80px] left-[-30px] aspect-square object-contain  "
-                src="Soporte.png"
+                src="soporte.png"
                 alt=""
             />
             <div className=" h-full min-h-[250px] overflow-hidden  rounded-xl  ">
