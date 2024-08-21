@@ -4,6 +4,7 @@ import Planes from "../components/tarjetas/planes.component";
 import TutorialesComponent from "../components/tutoriales/tutoriales.component";
 import TarjetasBanner from "@/components/tarjetas/tarjetas.planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
+import FibraOpticaComponent from "@/components/fibraOptica/fibraOptica.component";
 
 export default function Home() {
     return (
@@ -45,14 +46,21 @@ export default function Home() {
                 <section className="curved"></section>
             </div>
 
+            {/* Fibra Optica */}
+            <div className="  w-full grid place-items-center  relative py-10">
+                <FibraOpticaComponent />
+            </div>
+
             <div className="  w-full grid place-items-center relative py-10 ">
                 <MapaComponent />
+                <section className="curved"></section>
+            </div>
+
+            <div className="  w-full grid place-items-center">
+                <TutorialesComponent />
             </div>
             <div className="  w-full grid place-items-center bg-[#F6F6FD] py-10">
                 <Preguntas />
-            </div>
-            <div className="  w-full grid place-items-center">
-                <TutorialesComponent />
             </div>
         </main>
     );

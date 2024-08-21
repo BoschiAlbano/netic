@@ -23,7 +23,7 @@ const contacto: contacto[] = [
         subtitulo: "+54 381-9999999",
         parrafo: "",
         index: null,
-        color: "#F6F6FD",
+        color: "#ffff",
         color_texto: "#000",
     },
     {
@@ -32,7 +32,7 @@ const contacto: contacto[] = [
         subtitulo: "+54 381-9999999",
         parrafo: "",
         index: null,
-        color: "#F6F6FD",
+        color: "#ffff",
         color_texto: "#000",
     },
     {
@@ -41,7 +41,7 @@ const contacto: contacto[] = [
         subtitulo: "Ildelfonso de las muñecas 1431, San Miguel de Tucuman",
         parrafo: "",
         index: null,
-        color: "#F6F6FD",
+        color: "#ffff",
         color_texto: "#000",
     },
     {
@@ -143,7 +143,7 @@ function Map() {
             ref={refScreeen}
             className={`${
                 isNearScreen ? "efecto-show" : "opacity-0"
-            } relative h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 cursor-pointer`}
+            } relative h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 cursor-pointer shadow-lg`}
         >
             <img
                 className="absolute z-[99] sm:top-[-130px] sm:left-[-75px] sm:w-[150px]
