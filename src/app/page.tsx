@@ -41,26 +41,28 @@ export default function Home() {
                     <TarjetasBanner />
                 </div>
             </section>
-            <div className=" w-full grid place-items-center relative py-10">
-                <Planes />
+
+            {/* Fibra Optica */}
+            <div className="  w-full grid place-items-center  relative sm:py-20 py-10 ">
+                <FibraOpticaComponent />
                 <section className="curved"></section>
             </div>
 
-            {/* Fibra Optica */}
-            <div className="  w-full grid place-items-center  relative py-10">
-                <FibraOpticaComponent />
+            <div className=" w-full grid place-items-center relative py-10">
+                <Planes />
             </div>
 
             <div className="  w-full grid place-items-center relative py-10 ">
                 <MapaComponent />
-                <section className="curved"></section>
+                {/* <section className="curved-2"></section> */}
             </div>
 
+            <div className="  w-full grid place-items-center  sm:py-20 py-10 relative">
+                <Preguntas />
+                <section className="curved"></section>
+            </div>
             <div className="  w-full grid place-items-center">
                 <TutorialesComponent />
-            </div>
-            <div className="  w-full grid place-items-center bg-[#F6F6FD] py-10">
-                <Preguntas />
             </div>
         </main>
     );

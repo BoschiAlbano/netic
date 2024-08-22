@@ -1,10 +1,19 @@
+"use client";
 import React from "react";
 import TitleComponent from "../titles/title.component";
 import BotonesComponent from "../buttons/button.component";
+import useNerScreen from "@/app/hooks/useNerScreen";
 
 const FibraOpticaComponent = () => {
+    const { elementRef, isNearScreen } = useNerScreen();
+
     return (
-        <section className=" relative z-30  w-full h-full grid place-items-center overflow-hidden">
+        <section
+            ref={elementRef}
+            className={` ${
+                isNearScreen ? "efecto-show" : "opacity-0"
+            } relative z-30  w-full h-full grid place-items-center overflow-hidden`}
+        >
             <div className=" sm:w-[70%] w-[90%] flex sm:flex-row flex-col justify-center items-center sm:gap-20 gap-10 text-center">
                 <div className=" sm:w-[40%] w-[100%] aspect-square  flex justify-center items-center relative">
                     {/* Circulos */}
@@ -17,9 +26,15 @@ const FibraOpticaComponent = () => {
                             // src="https://www.ipsecurity.com.ar/wp-content/uploads/cartel-del-encuentro-seguridad-integral.jpg"
                             src="/seguridad.jpg"
                             alt=""
-                            className=" object-cover w-[100%] rounded-[0.5rem]"
+                            className={`${
+                                isNearScreen && "show-left delay-150"
+                            } object-cover w-[100%] rounded-[0.5rem] `}
                         />
-                        <div className=" flex flex-row absolute shadow-md  top-[15%] sm:right-[0%] sm:translate-x-[75%] translate-x-[60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2">
+                        <div
+                            className={`${
+                                isNearScreen && "show-right delay-200"
+                            }  flex flex-row absolute shadow-md  top-[15%] sm:right-[0%] sm:translate-x-[75%] translate-x-[60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2`}
+                        >
                             {/* <Whatsapp width={"30px"} height={"30px"} /> */}
                             <p className=" font-semibold sm:text-lg text-sm">
                                 Conectando hoy para
@@ -30,12 +45,18 @@ const FibraOpticaComponent = () => {
                         <img
                             src="/velocidad.jpg"
                             alt=""
-                            className=" object-cover w-[100%] rounded-[0.5rem]"
+                            className={`${
+                                isNearScreen && "show-right delay-300"
+                            }  object-cover w-[100%] rounded-[0.5rem]`}
                         />
 
-                        <div className=" flex flex-row-reverse absolute shadow-md  bottom-[15%] left-[0%] sm:translate-x-[-75%] translate-x-[-60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2">
+                        <div
+                            className={`${
+                                isNearScreen && "show-left delay-400"
+                            } flex flex-row-reverse absolute shadow-md  bottom-[15%] left-[0%] sm:translate-x-[-75%] translate-x-[-60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2`}
+                        >
                             {/* <Whatsapp width={"30px"} height={"30px"} /> */}
-                            <p className=" font-semibold sm:text-lg text-sm">
+                            <p className="  font-semibold sm:text-lg text-sm">
                                 un futuro mejor.
                             </p>
                         </div>
@@ -44,7 +65,11 @@ const FibraOpticaComponent = () => {
 
                 <div className=" w-[100%] sm:w-[60%]  h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
                     <TitleComponent strong="Fibra" span="Optica" h1="" />
-                    <p className=" sm:text-xl text-sm font-medium">
+                    <p
+                        className={` ${
+                            isNearScreen && "show-right delay-500"
+                        } sm:text-xl text-sm font-medium`}
+                    >
                         La fibra óptica ofrece una conexión a internet de alta
                         velocidad, con una capacidad de transmisión superior y
                         menor latencia, ideal para aplicaciones exigentes como

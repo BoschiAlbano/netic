@@ -82,7 +82,7 @@ function Video({
             ref={refScreeen}
             className={`${
                 isNearScreen ? "efecto-show" : "opacity-0"
-            } w-full sm:h-[500px] flex flex-col rounded-xl bg-white bg-clip-border text-gray-700  `}
+            } w-full sm:h-[500px] flex flex-col rounded-xl bg-[#F6F6FD] bg-clip-border text-gray-700  `}
         >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                 {/* efecto-show-scroll */}
