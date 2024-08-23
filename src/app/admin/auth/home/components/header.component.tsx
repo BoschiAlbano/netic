@@ -42,6 +42,7 @@ const Header = () => {
                         className=" h-full w-full  object-contain    "
                         src="/logoBlanco.png"
                         alt="logo de Netic"
+                        loading="lazy"
                     />
                 </Link>
                 <Link
@@ -52,6 +53,7 @@ const Header = () => {
                         className="h-full w-full  object-contain  "
                         src="/logo.png"
                         alt="logo de Netic"
+                        loading="lazy"
                     />
                 </Link>
             </div>

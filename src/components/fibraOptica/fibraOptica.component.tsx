@@ -26,6 +26,7 @@ const FibraOpticaComponent = () => {
                             // src="https://www.ipsecurity.com.ar/wp-content/uploads/cartel-del-encuentro-seguridad-integral.jpg"
                             src="/seguridad.jpg"
                             alt=""
+                            loading="lazy"
                             className={`${
                                 isNearScreen && "show-left delay-150"
                             } object-cover w-[100%] rounded-[0.5rem] `}
@@ -45,6 +46,7 @@ const FibraOpticaComponent = () => {
                         <img
                             src="/velocidad.jpg"
                             alt=""
+                            loading="lazy"
                             className={`${
                                 isNearScreen && "show-right delay-300"
                             }  object-cover w-[100%] rounded-[0.5rem]`}

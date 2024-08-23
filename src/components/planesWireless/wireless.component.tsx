@@ -16,7 +16,11 @@ const WirelessComponent = () => {
         >
             <div className=" sm:w-[70%] w-[90%] flex sm:flex-row flex-col justify-center items-center sm:gap-20 gap-10 text-center">
                 <div className=" sm:w-[40%] w-[100%] aspect-square  flex justify-center items-center relative">
-                    <img src="/wireless.png" alt="" />
+                    <img
+                        src="/wireless.webp"
+                        alt="imagen wireless"
+                        loading="lazy"
+                    />
                 </div>
 
                 <div className=" w-[100%] sm:w-[60%]  h-full flex flex-col justify-center items-center sm:gap-10 gap-5">

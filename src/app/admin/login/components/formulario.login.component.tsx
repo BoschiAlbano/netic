@@ -67,6 +67,7 @@ const FormularioLoginComponent = () => {
                     className=" w-[90%] object-contain"
                     src="/logo.png"
                     alt=""
+                    loading="lazy"
                 />
             </div>
 

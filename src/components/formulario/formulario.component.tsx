@@ -21,8 +21,9 @@ const FormularioComponent = () => {
         >
             <div className="  sm:w-auto w-full contenedor-formulario justify-items-center items-center gap-4 grid lg:grid-cols-2 grid-cols-1 ">
                 <img
-                    src="/banner.png"
-                    alt=""
+                    src="/banner.webp"
+                    alt="banner principal"
+                    loading="lazy"
                     className=" sm:w-[80%] w-[100%]"
                 />
                 <FormularioSubmit />

@@ -32,6 +32,7 @@ const Header = () => {
                         className="h-full w-full  object-contain  "
                         src="/logo.png"
                         alt="logo de Netic"
+                        loading="lazy"
                     />
                 </Link>
             </div>

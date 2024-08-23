@@ -134,15 +134,17 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
             {index === 2 && (
                 <img
                     className="absolute sm:top-[-75px] sm:right-[-75px] sm:w-[150px] w-[70px] top-[-30px] right-[-30px]  rotate-[30deg] aspect-square object-contain  "
-                    src="wifi.png"
-                    alt=""
+                    src="wifi.webp"
+                    loading="lazy"
+                    alt="imagen wifi"
                 />
             )}
             {index === 0 && (
                 <img
                     className="sm:hidden absolute w-[70px] top-[-30px] left-[-30px]  rotate-[-30deg] aspect-square object-contain "
-                    src="wifi.png"
-                    alt=""
+                    src="wifi.webp"
+                    loading="lazy"
+                    alt="imagen wifi"
                 />
             )}
 

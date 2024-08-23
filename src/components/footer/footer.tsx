@@ -12,7 +12,8 @@ const Footer = () => {
             <Link href={"#home"} className="sm:absolute relative">
                 <img
                     src="logo.png"
-                    alt=""
+                    alt="logo de netic"
+                    loading="lazy"
                     className=" sm:w-[150px] w-[130px] jello"
                 />
             </Link>

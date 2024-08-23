@@ -76,8 +76,9 @@ const Preguntas = () => {
                     </div>
 
                     <img
-                        src="/megafono.png"
+                        src="/megafono.webp"
                         alt="imagen de megafono"
+                        loading="lazy"
                         className=" sm:w-[150px] w-[100px] absolute top-[0%] sm:translate-x-[-20%] translate-x-[0%] translate-y-[-50%] left-0"
                     ></img>
                 </div>
