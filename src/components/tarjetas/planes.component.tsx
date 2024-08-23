@@ -3,6 +3,8 @@ import React from "react";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Link from "next/link";
 import TitleComponent from "../titles/title.component";
+import SvgLazo from "../svg/icons/lazo.svg";
+import SvgPuntos from "../svg/puntos.svg";
 
 interface tarjeta {
     plan: string;
@@ -16,7 +18,7 @@ interface tarjeta {
 
 const tarjeta: tarjeta[] = [
     {
-        plan: "50",
+        plan: "30",
         c1: "Navegá sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
@@ -25,7 +27,7 @@ const tarjeta: tarjeta[] = [
         index: null,
     },
     {
-        plan: "100",
+        plan: "50",
         c1: "Navegá sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
@@ -34,7 +36,7 @@ const tarjeta: tarjeta[] = [
         index: null,
     },
     {
-        plan: "200",
+        plan: "100",
         c1: "Navegá sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
@@ -49,8 +51,11 @@ const TarjetaPlanesComponent = () => {
         <section
             className={`  relative sm:w-[90%] w-full z-30 grid place-items-center content-center `}
         >
+            <SvgLazo className=" sm:block hidden w-[25%] absolute left-0 translate-y-[-50%] fill-[#dbdbfd]" />
+
+            <SvgPuntos className=" sm:w-[15%] w-[35%] absolute right-0 top-0 sm:translate-y-[-0%] translate-y-[50%] fill-[#dbdbfd]" />
             <TitleComponent
-                h1="Tenemos los mejores planes para vos"
+                h1="¡Fibra Óptica a tu medida! Conéctate con 30 Mbps, 50 Mbps o 100 Mbps de velocidad."
                 span="Fibra Optica"
                 strong="PLANES"
             />
@@ -94,7 +99,10 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
                     isNearScreenCar1 ? "efecto-show-professional" : "opacity-0"
                 }`}
             >
-                <p className="title">PLAN</p>
+                <div>
+                    <p className="title">PLAN</p>
+                    <p className="title">HOGAR / EMPRESA</p>
+                </div>
                 <div className="price">
                     <b>{plan}</b>
                     <span>Mbps</span>
@@ -138,7 +146,10 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
                 />
             )}
 
-            <p className="title">PLAN</p>
+            <div>
+                <p className="title">PLAN</p>
+                <p className="title">HOGAR / EMPRESA</p>
+            </div>
             <div className="price">
                 <b>{plan}</b>
                 <span>Mbps</span>

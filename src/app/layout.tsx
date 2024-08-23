@@ -32,7 +32,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={montserrat.className}>
-                <section className=" sm:min-h-screen sm:h-full flex flex-col justify-between relative">
+                <section className=" sm:min-h-screen sm:h-full flex flex-col justify-between relative overflow-hidden">
                     {/* circulos */}
                     {/* <div className="z-30 circulo-fixed bg-[#fa00f613] top-0 right-0"></div>
                     <div className="z-30 circulo-fixed bg-[#fa00f613] bottom-0 sm:right-[60%] right-[50%]"></div>
@@ -43,7 +43,7 @@ export default function RootLayout({
 
                     <Header />
 
-                    <section className="z-40 pt-[80px]">{children}</section>
+                    <section className="z-40 ">{children}</section>
                     <Footer />
                 </section>
             </body>

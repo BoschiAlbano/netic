@@ -83,24 +83,30 @@ body::-webkit-scrollbar-thumb {
 
 .contenedor {
     /* background: url(/PlanetaSinFondoLineasNegras.png); */
-    background-size: contain;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: url("/fondo.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: top;
-    opacity: 0.3;
+    /* background-position: top; */
+    /* opacity: 0.3; */
 }
 
 @media (width <= 640px) {
-    .contenedor {
+    /* .contenedor {
         background-size: cover;
         background-position: top;
-    }
+    } */
 }
 
-.blur-effect-contenedor {
+/* .blur-effect-contenedor {
     background: #fafafa10;
     backdrop-filter: blur(0.2rem);
     -webkit-backdrop-filter: blur(0.2rem);
-}
+} */
 
 /* Texto Menu */
 .subrayar {
@@ -189,7 +195,7 @@ body::-webkit-scrollbar-thumb {
 .grillaPlanes .box .title {
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     color: #555;
 }
 

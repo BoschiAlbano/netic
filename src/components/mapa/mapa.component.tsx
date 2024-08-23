@@ -5,6 +5,7 @@ import MapaSvg from "../svg/icons/mapa.svg";
 import TelefonoSvg from "../svg/icons/telefono.svg";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Whatsapp from "../svg/icons/whatsapp.svg";
+import SvgPuntos from "../svg/puntos.svg";
 
 interface contacto {
     Icono: React.JSX.Element;
@@ -65,6 +66,8 @@ const MapaComponent = () => {
                 isNearScreen ? "efecto-show" : "opacity-0"
             } relative z-30  w-full h-full grid place-items-center `}
         >
+            <SvgPuntos className=" sm:w-[10%] w-[25%] absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
+
             <div className="sm:w-[70%] w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
                 <div className=" h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
                     <TitleComponent
@@ -82,7 +85,9 @@ const MapaComponent = () => {
                             <strong>Soporte Técnico</strong> <br /> Para soporte
                             técnico relacionado con nuestros productos o
                             servicios, puedes enviarnos un correo electrónico a
-                            soporte@tudominio.com o llamarnos al +1 234 567 890.
+                            soporte@tudominio.com o llamarnos al{" "}
+                            <strong>381-2221729</strong> o{" "}
+                            <strong>381-3032589</strong>
                         </p>
                         <p className=" sm:text-xl text-sm font-medium text-start">
                             <strong>Consultas Generales</strong> <br /> Para
@@ -104,7 +109,7 @@ const MapaComponent = () => {
                         </p>
                         <p className=" sm:text-xl text-sm font-medium text-start">
                             <strong>Horario de Atención</strong> <br /> Lunes a
-                            Viernes: 9:00 AM - 6:00 PM Sábados: 10:00 AM - 2:00
+                            Viernes: 9:00 AM - 6:00 PM Sábados: 9:00 AM - 2:00
                             PM Domingos y festivos: Cerrado
                         </p>
                         <strong>

@@ -40,7 +40,7 @@ const Header = () => {
                 <Link className="subrayar" href="/">
                     HOME
                 </Link>
-                <Link className="subrayar" href="/planes">
+                <Link className="subrayar" href="/#planes">
                     Planes
                 </Link>
 
