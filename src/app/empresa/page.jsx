@@ -1,3 +1,4 @@
+import Header from "@/components/header/header";
 import TitleComponent from "@/components/titles/title.component";
 import React from "react";
 const Page = () => {
