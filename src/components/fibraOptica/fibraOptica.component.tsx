@@ -70,7 +70,7 @@ const FibraOpticaComponent = () => {
                     <p
                         className={` ${
                             isNearScreen && "show-right delay-500"
-                        } sm:text-xl text-sm font-medium`}
+                        } sm:text-xl text-sm font-medium mx-auto  leading-relaxed text-gray-500 text-center`}
                     >
                         La fibra óptica ofrece una conexión a internet de alta
                         velocidad, con una capacidad de transmisión superior y

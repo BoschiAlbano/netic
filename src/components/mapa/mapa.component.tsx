@@ -6,6 +6,8 @@ import TelefonoSvg from "../svg/icons/telefono.svg";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Whatsapp from "../svg/icons/whatsapp.svg";
 import SvgPuntos from "../svg/puntos.svg";
+import SendSvg from "../svg/icons/send.svg";
+import PhoneSvg from "../svg/icons/phone.svg";
 
 interface contacto {
     Icono: React.JSX.Element;
@@ -56,19 +58,17 @@ const contacto: contacto[] = [
     },
 ];
 
-const MapaComponent = () => {
+const ContactoSoporte = () => {
     const { elementRef, isNearScreen } = useNerScreen();
 
     return (
         <section
             ref={elementRef}
-            className={` ${
-                isNearScreen ? "efecto-show" : "opacity-0"
-            } relative z-30  w-full h-full grid place-items-center `}
+            className={`  relative z-30  w-full h-full grid place-items-center `}
         >
             <SvgPuntos className=" sm:w-[10%] w-[25%] absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
 
-            <div className="sm:w-[70%] w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
+            <div className="sm:w-[75%]  w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
                 <div className=" h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
                     <TitleComponent
                         strong="Contacto "
@@ -81,21 +81,57 @@ const MapaComponent = () => {
                             isNearScreen && "show-left delay-500"
                         } h-full flex flex-col justify-center items-center sm:gap-10 gap-5`}
                     >
-                        <p className=" sm:text-xl text-sm font-medium text-start">
+                        <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
                             <strong>Soporte Técnico</strong> <br /> Para soporte
                             técnico relacionado con nuestros productos o
-                            servicios, puedes enviarnos un correo electrónico a
-                            soporte@tudominio.com o llamarnos al{" "}
-                            <strong>381-2221729</strong> o{" "}
-                            <strong>381-3032589</strong>
-                        </p>
-                        <p className=" sm:text-xl text-sm font-medium text-start">
+                            servicios, puedes enviarnos un correo electrónico o
+                            a través de whatsApp.
+                            <ul>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <PhoneSvg width={"20px"} />
+                                    <span>381-2221729</span>
+                                </li>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <PhoneSvg width={"20px"} />
+                                    <span>381-3032589</span>
+                                </li>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <SendSvg width={"30px"} />
+                                    <span>
+                                        areatecnica@neticcomunicaciones.com.ar
+                                    </span>
+                                </li>
+                            </ul>
+                        </span>
+                        <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
                             <strong>Consultas Generales</strong> <br /> Para
                             cualquier otra consulta, ya sea sobre nuestros
-                            servicios, colaboraciones o información adicional,
-                            contáctanos a través de info@tudominio.com.
-                        </p>
-                        <p className=" sm:text-xl text-sm font-medium text-start">
+                            servicios, cobranzas, ventas o información
+                            adicional, contáctanos a través de{" "}
+                            <ul>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <SendSvg width={"30px"} />
+                                    <span>info@neticcomunicaciones.com.ar</span>
+                                </li>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <SendSvg width={"30px"} />
+                                    <span>
+                                        ventas@neticcomunicaciones.com.ar
+                                    </span>
+                                </li>
+                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
+                                    <SendSvg width={"30px"} />
+                                    <span>
+                                        cobranzas@neticcomunicaciones.com.ar
+                                    </span>
+                                </li>
+                            </ul>
+                            {/* <strong>
+                                ventas@neticcomunicaciones.com.ar ñññ
+                                cobranzas@neticcomunicaciones.com.ar
+                            </strong> */}
+                        </span>
+                        <p className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed">
                             <strong>Formulario de Contacto</strong> <br />{" "}
                             También puedes usar nuestro{" "}
                             <a
@@ -129,7 +165,7 @@ const MapaComponent = () => {
                         width="100%"
                         height="100%"
                         loading="lazy"
-                        className=" z-20"
+                        className=" z-20 rounded-[5px]"
                     ></iframe>
                 </div>
             </div>
@@ -137,4 +173,4 @@ const MapaComponent = () => {
     );
 };
 
-export default MapaComponent;
+export default ContactoSoporte;

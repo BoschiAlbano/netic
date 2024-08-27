@@ -30,7 +30,7 @@ const TitleComponent = ({ h1, span, strong }: titlecomponent) => {
                     </strong>
                     <span className="text-[#374151]"> {span}</span>
                 </div>
-                <h1 className="sm:text-2xl text-sm xm:mb-5 mb-2 text-[#374151]">
+                <h1 className="sm:text-2xl text-sm xm:mb-5 mb-2 text-[#374151] mx-auto   text-center leading-relaxed ">
                     {h1}
                 </h1>
             </div>

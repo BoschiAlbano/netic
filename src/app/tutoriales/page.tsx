@@ -2,7 +2,8 @@
 const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
     ssr: false,
 });
-import useNerScreen from "@/app/hooks/useNerScreen";
+import Header from "@/components/header/header";
+// import useNerScreen from "@/app/hooks/useNerScreen";
 import TitleComponent from "@/components/titles/title.component";
 import dynamic from "next/dynamic";
 
@@ -53,30 +54,34 @@ const videos: video[] = [
 
 const Tutoriales = () => {
     return (
-        <>
-            <div className="w-full pt-[80px] flex flex-col justify-center items-center">
-                <TitleComponent
-                    h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
-                    span=""
-                    strong="Tutoriales"
-                />
+        <Header>
+            <section className=" w-full flex justify-center items-center">
+                <div className="sm:w-[90%] w-[100%] pt-[80px] flex flex-col justify-center items-center">
+                    <TitleComponent
+                        h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
+                        span=""
+                        strong="Tutoriales"
+                    />
 
-                <section className=" w-[90%]">
-                    <div className={` grilla-tutoriales z-30 sm:mt-20 mt-10 `}>
-                        {videos.map((item, index) => {
-                            return (
-                                <Video
-                                    key={index}
-                                    url={item.url}
-                                    titulo={item.titulo}
-                                    descripcion={item.descripcion}
-                                />
-                            );
-                        })}
-                    </div>
-                </section>
-            </div>
-        </>
+                    <section className=" w-[90%]">
+                        <div
+                            className={` grilla-tutoriales z-30 sm:mt-20 mt-10 `}
+                        >
+                            {videos.map((item, index) => {
+                                return (
+                                    <Video
+                                        key={index}
+                                        url={item.url}
+                                        titulo={item.titulo}
+                                        descripcion={item.descripcion}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </Header>
     );
 };
 
@@ -91,22 +96,11 @@ function Video({
     descripcion: string;
     url: string;
 }) {
-    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-        {
-            distance: "0px",
-            once: true,
-        }
-    );
-
     return (
         <div
-            ref={refScreeen}
-            className={`${
-                isNearScreen ? "efecto-show" : "opacity-0"
-            } w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect `}
+            className={` w-full h-full flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-header blur-effect `}
         >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
-                {/* efecto-show-scroll */}
                 <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">
                     <YouTubePlayer
                         url={url}

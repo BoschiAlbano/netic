@@ -32,7 +32,7 @@ const WirelessComponent = () => {
                     <p
                         className={` ${
                             isNearScreen && "show-right delay-500"
-                        } sm:text-xl text-sm font-medium`}
+                        } sm:text-xl text-sm font-medium mx-auto  leading-relaxed text-gray-500 text-center`}
                     >
                         El internet Wi-Fi wireless proporciona movilidad y
                         flexibilidad al permitir la conexión de múltiples

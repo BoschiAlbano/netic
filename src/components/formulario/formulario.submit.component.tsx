@@ -41,7 +41,7 @@ const FormularioSubmit = () => {
             ref={refForm}
             // onSubmit={(e) => handleSubmit(e)}
             action={dispatch}
-            className=" flex flex-col justify-between items-center gap-4"
+            className="p-2 flex flex-col justify-between items-center gap-4"
         >
             <div className="w-[100%] z-30 relative grid place-items-center">
                 <div className=" sm:text-6xl text-3xl sm:mb-5 mb-2 font-bold">
@@ -69,8 +69,8 @@ const FormularioSubmit = () => {
                     type="number"
                 />
             </div>
+            <InputComponent name="Calle" palabra="Calle" type="text" />
             <div className="flex w-full gap-2">
-                <InputComponent name="Calle" palabra="Calle" type="text" />
                 <InputComponent name="Numero" palabra="Numero" type="number" />
                 <InputComponent
                     name="Casa"
@@ -80,11 +80,6 @@ const FormularioSubmit = () => {
                 />
             </div>
             <RadioButoonComponent />
-            <InputComponent
-                name="Otros Campos"
-                palabra="Otros Campos"
-                type="text"
-            />
 
             <SubmitComponent />
         </form>

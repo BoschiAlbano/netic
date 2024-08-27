@@ -4,7 +4,7 @@ const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
 });
 import TitleComponent from "../titles/title.component";
 import BotonesComponent from "../buttons/button.component";
-import useNerScreen from "@/app/hooks/useNerScreen";
+// import useNerScreen from "@/app/hooks/useNerScreen";
 import dynamic from "next/dynamic";
 interface video {
     url: string;
@@ -35,7 +35,7 @@ const videos: video[] = [
 
 const TutorialesComponent = () => {
     return (
-        <section className="relative w-[90%]  z-30 grid place-items-center content-center h-full">
+        <section className="relative w-[90%] mb-10  z-30 grid place-items-center content-center h-full">
             <TitleComponent
                 h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
                 span=""
@@ -70,19 +70,20 @@ function Video({
     descripcion: string;
     url: string;
 }) {
-    const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-        {
-            distance: "0px",
-            once: true,
-        }
-    );
+    // const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
+    //     {
+    //         distance: "0px",
+    //         once: true,
+    //     }
+    // );
 
     return (
         <div
-            ref={refScreeen}
-            className={`${
-                isNearScreen ? "efecto-show" : "opacity-0"
-            } w-full sm:h-[500px] flex flex-col rounded-xl bg-[#F6F6FD] bg-clip-border text-gray-700  `}
+            // ref={refScreeen}
+            // ${
+            //     isNearScreen ? "efecto-show" : "opacity-0"
+            // }
+            className={` w-full sm:h-[500px] flex flex-col rounded-xl  shadow-header bg-clip-border text-gray-700  `}
         >
             <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
                 {/* efecto-show-scroll */}
