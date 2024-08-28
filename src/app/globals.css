@@ -49,24 +49,6 @@ body {
     background-size: 50px 50px; */
 
     background: rgb(255, 255, 255);
-
-    /* &::before {
-        position: fixed;
-        width: 400px;
-        height: 400px;
-        content: "";
-        background-image: linear-gradient(
-            to right,
-            var(--Color1),
-            var(--Color4)
-        );
-        z-index: -1;
-        top: -200px;
-        left: 0;
-        border-radius: 50% 50% 0% 0%;
-        pointer-events: none;
-        filter: blur(250px);
-    } */
 }
 body::-webkit-scrollbar {
     width: 10px;
@@ -78,13 +60,11 @@ body::-webkit-scrollbar-thumb {
     border-radius: 5px;
 }
 
-/* Degradodo imagen de fondo */
 .img-degradado {
     mask-image: linear-gradient(rgb(255, 255, 255) 75%, transparent);
 }
 
 .contenedor {
-    /* background: url(/PlanetaSinFondoLineasNegras.png); */
     position: absolute;
     top: 0px;
     left: 0px;
@@ -95,23 +75,7 @@ body::-webkit-scrollbar-thumb {
     background-repeat: no-repeat;
 
     mask-image: linear-gradient(transparent, black 80%);
-
-    /* background-position: top; */
-    /* opacity: 0.3; */
 }
-
-@media (width <= 640px) {
-    /* .contenedor {
-        background-size: cover;
-        background-position: top;
-    } */
-}
-
-/* .blur-effect-contenedor {
-    background: #fafafa10;
-    backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem);
-} */
 
 /* Texto Menu */
 .subrayar {
@@ -183,12 +147,6 @@ body::-webkit-scrollbar-thumb {
     padding: 20px;
     border-radius: 10px;
     background: #ffffff;
-    /* backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem); */
-    /* -webkit-box-shadow: 0px 0px 50px 5px var(--Color4);
-    -moz-box-shadow: 0px 0px 50px 5px var(--Color4);
-    box-shadow: 0px 0px 50px 5px var(--Color4); */
-
     transition: scale 100ms ease-in-out;
 }
 
@@ -200,7 +158,6 @@ body::-webkit-scrollbar-thumb {
 .grillaPlanes .box .title {
     font-size: 16px;
     font-weight: 600;
-    /* margin-bottom: 20px; */
     color: #555;
 }
 
@@ -234,7 +191,6 @@ body::-webkit-scrollbar-thumb {
 
 .grillaPlanes #professional {
     z-index: 99;
-    /* transform: scale(1.1); */
     background: linear-gradient(to bottom, #302172, #d5a3ff);
 }
 
@@ -305,16 +261,9 @@ body::-webkit-scrollbar-thumb {
 
 /* Formulario */
 .contenedor-formulario {
-    /* border: 1px solid #ffffff; */
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    /* background: #fafafa10;
-    backdrop-filter: blur(0.2rem);
-    -webkit-backdrop-filter: blur(0.2rem); */
-    /* -webkit-box-shadow: 0px 0px 50px 5px var(--Color4);
-    -moz-box-shadow: 0px 0px 50px 5px var(--Color4);
-    box-shadow: 0px 0px 50px 5px var(--Color4); */
 }
 
 .contenedor-formulario select {
@@ -383,54 +332,8 @@ body::-webkit-scrollbar-thumb {
     font-size: 14px;
 }
 
-/* Circulos */
-.circulo-fixed {
-    width: 30%;
-    height: auto;
-    aspect-ratio: 1/1;
-    position: fixed;
-    border-radius: 100%;
-
-    --tw-blur: blur(150px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-@media (width <= 640px) {
-    .circulo-fixed {
-        width: 60%;
-
-        height: auto;
-        aspect-ratio: 1/1;
-        position: fixed;
-        border-radius: 100%;
-
-        --tw-blur: blur(70px);
-        filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-            var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-            var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-    }
-}
-
-.circulo {
-    width: 30%;
-    height: auto;
-    aspect-ratio: 1/1;
-    position: absolute;
-    border-radius: 100%;
-
-    --tw-blur: blur(100px);
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
-        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 /* Menu */
 .efecto-clase1 {
-    /* background: #23174f; */
-    /* background: #23174f; */
-
     font-size: medium;
     backdrop-filter: blur(2px);
     height: 60px;
@@ -439,20 +342,10 @@ body::-webkit-scrollbar-thumb {
     & .boton {
         padding: 0.3rem 0.5rem;
     }
-
-    /* & .efecto-logo {
-        opacity: 2;
-        display: none;
-    } */
 }
 
 .efecto-clase2 {
     background: transparent;
-
-    /* & .efecto-logo {
-        opacity: 1;
-        display: flex;
-    } */
 }
 
 .efecto-show {
@@ -682,7 +575,6 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-/* Texto Bienvenda */
 .texto-efecto-entrada {
     -webkit-animation: tracking-in-contract-bck 1s
         cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -702,8 +594,6 @@ body::-webkit-scrollbar-thumb {
         opacity: 1;
     }
 }
-
-/* Tutoriales */
 
 .grilla-tutoriales {
     width: 100%;
@@ -740,44 +630,6 @@ body::-webkit-scrollbar-thumb {
         }
     }
 }
-
-/* .efecto-show-scroll-sin-scale {
-    animation: show-scroll-sin-scale both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 50%;
-}
-@keyframes show-scroll-sin-scale {
-    0% {
-        opacity: 0;
-        translate: 0 100px;
-    }
-    100% {
-        opacity: 1;
-        translate: 0 0;
-    }
-} */
-
-/* .efecto-show-scroll {
-    animation: show-scroll both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 50%;
-    animation-iteration-count: 1;
-}
-
-@keyframes show-scroll {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-        translate: 0 100px;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-        translate: 0 0;
-    }
-} */
-
-/* button */
 .cta {
     position: relative;
     margin: auto;
@@ -810,7 +662,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.05em;
-    /* color: #000000; */
 }
 
 @media (width <= 640px) {
@@ -826,16 +677,10 @@ body::-webkit-scrollbar-thumb {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    /* stroke: #000000; */
     stroke-width: 2;
     transform: translateX(-5px);
     transition: all 0.3s ease;
 }
-
-/* .cta:hover:before {
-    width: 100%;
-    background: var(--Color4);
-} */
 
 .cta:hover svg {
     transform: translateX(0);
@@ -873,11 +718,9 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes blur-in {
     0% {
-        /* filter: blur(12px); */
         opacity: 0;
     }
     100% {
-        /* filter: blur(0); */
         opacity: 1;
     }
 }
@@ -892,20 +735,6 @@ body::-webkit-scrollbar-thumb {
         translate: 0 0;
     }
 }
-/* .animar-tarjetas:nth-child(1) {
-    animation-delay: 3s;
-}
-.animar-tarjetas:nth-child(2) {
-    animation-delay: 4s;
-}
-.animar-tarjetas:nth-child(3) {
-    animation-delay: 5s;
-}
-.animar-tarjetas:nth-child(4) {
-    animation-delay: 6s;
-} */
-
-/* fibraOptica */
 
 .show-left {
     animation: show-left-button 2s forwards;
@@ -1549,7 +1378,6 @@ ul {
     height: 100%;
     z-index: 0;
     transform: skewY(6deg);
-    /* transform-origin: top right; */
 }
 
 .curved-2 {
@@ -1634,10 +1462,6 @@ ul {
     }
 }
 
-.container-text-hidden-effect {
-    /* overflow: hidden; */
-}
-
 .container-text-hidden-effect .show-text-block {
     position: absolute;
     animation: show-text-block 0.8s ease-in 0s forwards;
@@ -1672,4 +1496,54 @@ ul {
         opacity: 0;
         transform: translateY(-100%);
     }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#mySwiper .swiper-pagination {
+    --swiper-pagination-color: #5e4a87;
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-opacity: 0.25;
+    --swiper-pagination-bullet-opacity: 0.8;
+    --swiper-pagination-bullet-horizontal-gap: 2px;
+
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(100%);
+}
+
+#mySwiper {
+    position: static;
+    border-radius: 5px;
+}
+
+@media (width <= 640px) {
+    #mySwiper .swiper-button-prev,
+    #mySwiper .swiper-button-next {
+        visibility: hidden;
+    }
+}
+
+#mySwiper .swiper-button-prev {
+    position: absolute;
+    left: -10px;
+    transform: translateX(-100%);
+}
+#mySwiper .swiper-button-next {
+    right: -10px;
+    transform: translateX(100%);
+}
+#mySwiper .swiper-button-prev,
+#mySwiper .swiper-button-next {
+    --swiper-navigation-size: 40px;
+    --swiper-theme-color: #5e4a87;
+
+    border-radius: 100%;
+
+    opacity: 1;
+    transition: opacity 1s;
 }

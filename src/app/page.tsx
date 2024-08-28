@@ -11,6 +11,8 @@ import React, { Suspense } from "react";
 import LetterComponet from "@/components/letter/letter.componet";
 import MenuComponent from "@/components/menu/menu.component";
 import Header from "@/components/header/header";
+import TutorialesComponent2 from "../components/tutoriales/tutoriales.component";
+import SvgLazo from "@/components/svg/icons/lazo.svg";
 
 const TutorialesComponent = React.lazy(
     () => import("../components/tutoriales/tutoriales.component")
@@ -85,19 +87,8 @@ export default function Home() {
                 <div className="  w-full grid place-items-center relative py-10 ">
                     <MapaComponent />
                 </div>
-
-                <div className="  w-full grid place-items-center  sm:py-20 py-10 relative">
+                <div className="  w-full grid place-items-center py-10 relative">
                     <Preguntas />
-                    <section className="curved"></section>
-                </div>
-                <div className="  w-full grid place-items-center">
-                    <Suspense fallback={<p>Cargando...</p>}>
-                        {isNearScreen ? (
-                            <TutorialesComponent />
-                        ) : (
-                            <p>Cargando...</p>
-                        )}
-                    </Suspense>
                 </div>
             </main>
         </Header>

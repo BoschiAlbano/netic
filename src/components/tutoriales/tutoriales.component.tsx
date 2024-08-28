@@ -2,10 +2,15 @@
 const YouTubePlayer = dynamic(() => import("react-player/youtube"), {
     ssr: false,
 });
-import TitleComponent from "../titles/title.component";
-import BotonesComponent from "../buttons/button.component";
-// import useNerScreen from "@/app/hooks/useNerScreen";
 import dynamic from "next/dynamic";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
 interface video {
     url: string;
     titulo: string;
@@ -31,81 +36,71 @@ const videos: video[] = [
         descripcion:
             "Esta es una lista de algunos servicios de la nube que te permiten desplegar bases de datos SQL (como MySQL, PostgreSQL, SQL Server y otros) en producción para proyectos reales. Entre estos podemos encontrar a AWS RDS, Google Cloud SQL, Railway, Render.com, Digitalocean manage databases, planetscale y neon.",
     },
+    {
+        url: "https://www.youtube.com/watch?v=NsaAN6diuw4",
+        titulo: "¿Donde desplegar bases de datos de SQL para proyectos reales?",
+        descripcion:
+            "Esta es una lista de algunos servicios de la nube que te permiten desplegar bases de datos SQL (como MySQL, PostgreSQL, SQL Server y otros) en producción para proyectos reales. Entre estos podemos encontrar a AWS RDS, Google Cloud SQL, Railway, Render.com, Digitalocean manage databases, planetscale y neon.",
+    },
 ];
 
-const TutorialesComponent = () => {
+const TutorialesComponent2 = () => {
     return (
-        <section className="relative w-[90%] mb-10  z-30 grid place-items-center content-center h-full">
-            <TitleComponent
-                h1="Si tienes alguna duda puedes consultar nuestros tutoriales"
-                span=""
-                strong="Tutoriales"
-            />
-            <div className={`grilla-tutoriales z-30  sm:mt-28 mt-16 mb-10`}>
-                {videos.map((item, index) => {
-                    return (
-                        <Video
-                            key={index}
-                            url={item.url}
-                            titulo={item.titulo}
-                            descripcion={item.descripcion}
-                        />
-                    );
-                })}
-            </div>
-
-            <BotonesComponent texto="Ver mas" page="tutoriales" />
-        </section>
+        <>
+            <section className=" grid place-items-center sm:w-[80%] w-[95%] relative">
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    autoplay={true}
+                    // autoHeight={true}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Pagination, Navigation, Autoplay]}
+                    id="mySwiper"
+                >
+                    {videos.map((item, index) => {
+                        return (
+                            <SwiperSlide key={index} className="">
+                                <div className=" w-[100%] h-[100%] aspect-video rounded-[5px] overflow-hidden   flex flex-col gap-4 justify-center items-center ">
+                                    <YouTubePlayer
+                                        url={item.url}
+                                        key={index}
+                                        controls
+                                        // muted
+                                        // loop
+                                        width={"100%"}
+                                        height={"100%"}
+                                        fallback={
+                                            <p className=" text-black">
+                                                Cargando...
+                                            </p>
+                                        }
+                                        style={{ background: "#ffff" }}
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })}
+                </Swiper>
+            </section>
+        </>
     );
 };
 
-export default TutorialesComponent;
-
-function Video({
-    titulo,
-    descripcion,
-    url,
-}: {
-    titulo: string;
-    descripcion: string;
-    url: string;
-}) {
-    // const { elementRef: refScreeen, isNearScreen: isNearScreen } = useNerScreen(
-    //     {
-    //         distance: "0px",
-    //         once: true,
-    //     }
-    // );
-
-    return (
-        <div
-            // ref={refScreeen}
-            // ${
-            //     isNearScreen ? "efecto-show" : "opacity-0"
-            // }
-            className={` w-full sm:h-[500px] flex flex-col rounded-xl  shadow-header bg-clip-border text-gray-700  `}
-        >
-            <div className="relative mx-4 -mt-6 h-auto overflow-hidden rounded-xl text-white shadow-xl ">
-                {/* efecto-show-scroll */}
-                <div className="shadow-header border-white rounded-[5px] w-full h-full  object-cover aspect-video overflow-hidden ">
-                    <YouTubePlayer
-                        url={url}
-                        controls
-                        // muted
-                        // loop
-                        width={"100%"}
-                        height={"100%"}
-                    />
-                </div>
-            </div>
-            <div className="p-6">
-                <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                    {titulo}
-                </h5>
-                <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                    {descripcion}
-                </p>
-            </div>
-        </div>
-    );
-}
+export default TutorialesComponent2;
