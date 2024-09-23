@@ -5,7 +5,6 @@ import Link from "next/link";
 import TitleComponent from "../titles/title.component";
 import SvgLazo from "../svg/icons/lazo.svg";
 import SvgPuntos from "../svg/puntos.svg";
-import CalentarioSvg from "../svg/icons/calendario.svg";
 import EyeComponent from "../svg/icons/eye.svg";
 
 interface tarjeta {
@@ -22,7 +21,7 @@ interface tarjeta {
 const tarjeta: tarjeta[] = [
     {
         plan: "30",
-        info: "Recomendado para familias pequeñas o para quienes tienen un uso moderado de internet. Con este plan, puedes conectar de 3 a 4 teléfonos celulares y un televisor. Es adecuado para streaming en alta definición y navegación simultánea en múltiples dispositivos.",
+        info: "Este plan es ideal para hogares con hasta 2 teléfonos celulares y un televisor. Ofrece una velocidad suficiente para navegar por internet, realizar videollamadas y ver contenido en streaming sin interrupciones, siempre y cuando el uso sea moderado.",
         c1: "Navega sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
