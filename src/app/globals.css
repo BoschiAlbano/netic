@@ -136,13 +136,13 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px 0px;
+    gap: 20px 20px;
 }
 
 .grillaPlanes .box {
     width: 300px;
     justify-content: space-between;
-    border: 1px solid #ffffff;
+    /* border: 1px solid #ffffff; */
     text-align: center;
     padding: 20px;
     border-radius: 10px;
@@ -150,10 +150,10 @@ body::-webkit-scrollbar-thumb {
     transition: scale 100ms ease-in-out;
 }
 
-.grillaPlanes .box:hover {
+/* .grillaPlanes .box:hover {
     scale: 1.05;
     transition: scale 300ms ease-in-out;
-}
+} */
 
 .grillaPlanes .box .title {
     font-size: 16px;
@@ -191,6 +191,10 @@ body::-webkit-scrollbar-thumb {
 
 .grillaPlanes #professional {
     z-index: 99;
+    background: linear-gradient(to bottom, #302172, #d5a3ff);
+}
+
+#modalProfessional {
     background: linear-gradient(to bottom, #302172, #d5a3ff);
 }
 
@@ -703,7 +707,7 @@ body::-webkit-scrollbar-thumb {
     overflow: hidden;
 }
 
-.home button {
+.home #button {
     animation: show-left-button 1s forwards 2s;
     opacity: 0;
 }

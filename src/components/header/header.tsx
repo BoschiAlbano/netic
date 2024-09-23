@@ -21,7 +21,7 @@ const Header = ({ children }: { children: React.ReactNode }) => {
     return (
         <main>
             <header
-                className={` fixed h-[80px] top-0 z-50 w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
+                className={` fixed h-[80px] top-0 z-[999] w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
                     prevScrollY <= 50 ? "efecto-clase2" : "efecto-clase1"
                 } `}
             >

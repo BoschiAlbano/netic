@@ -29,7 +29,7 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed h-[80px] z-40 w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
+            className={`fixed h-[80px] z-[999] w-full  flex flex-row justify-between items-center sm:px-6 px-2 py-2  transition-all duration-500  ${
                 prevScrollY <= 300 ? "efecto-clase2" : "efecto-clase1"
             } `}
         >

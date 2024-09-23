@@ -64,9 +64,9 @@ const ContactoSoporte = () => {
     return (
         <section
             ref={elementRef}
-            className={`  relative z-30  w-full h-full grid place-items-center `}
+            className={`  relative z-30  w-full h-full grid place-items-center  `}
         >
-            <SvgPuntos className=" sm:w-[10%] w-[25%] absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
+            <SvgPuntos className=" sm:w-[10%] w-[25%]  absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
 
             <div className="sm:w-[75%]  w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
                 <div className=" h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
@@ -79,13 +79,15 @@ const ContactoSoporte = () => {
                     <div
                         className={` ${
                             isNearScreen && "show-left delay-500"
-                        } h-full flex flex-col justify-center items-center sm:gap-10 gap-5`}
+                        } h-full flex flex-col justify-center items-center sm:gap-10 gap-5 text-gray-600`}
                     >
                         <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
-                            <strong>Soporte Técnico</strong> <br /> Para soporte
-                            técnico relacionado con nuestros productos o
-                            servicios, puedes enviarnos un correo electrónico o
-                            a través de whatsApp.
+                            <strong className=" text-black sm:text-2xl text-lg">
+                                Soporte Técnico
+                            </strong>{" "}
+                            <br /> Para soporte técnico relacionado con nuestros
+                            productos o servicios, puedes enviarnos un correo
+                            electrónico o a través de whatsApp.
                             <ul>
                                 <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
                                     <PhoneSvg width={"20px"} />
@@ -104,9 +106,11 @@ const ContactoSoporte = () => {
                             </ul>
                         </span>
                         <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
-                            <strong>Consultas Generales</strong> <br /> Para
-                            cualquier otra consulta, ya sea sobre nuestros
-                            servicios, cobranzas, ventas o información
+                            <strong className=" sm:text-2xl text-lg text-black">
+                                Consultas Generales
+                            </strong>{" "}
+                            <br /> Para cualquier otra consulta, ya sea sobre
+                            nuestros servicios, cobranzas, ventas o información
                             adicional, contáctanos a través de{" "}
                             <ul>
                                 <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
@@ -132,8 +136,10 @@ const ContactoSoporte = () => {
                             </strong> */}
                         </span>
                         <p className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed">
-                            <strong>Formulario de Contacto</strong> <br />{" "}
-                            También puedes usar nuestro{" "}
+                            <strong className=" sm:text-2xl text-lg text-black">
+                                Formulario de Contacto
+                            </strong>{" "}
+                            <br /> También puedes usar nuestro{" "}
                             <a
                                 className=" text-[var(--Color1)] font-semibold underline"
                                 href="/contratar"
@@ -144,11 +150,13 @@ const ContactoSoporte = () => {
                             , y te responderemos lo antes posible.
                         </p>
                         <p className=" sm:text-xl text-sm font-medium text-start">
-                            <strong>Horario de Atención</strong> <br /> Lunes a
-                            Viernes: 9:00 AM - 6:00 PM Sábados: 9:00 AM - 2:00
-                            PM Domingos y festivos: Cerrado
+                            <strong className=" sm:text-2xl text-lg text-black">
+                                Horario de Atención
+                            </strong>{" "}
+                            <br /> Lunes a Viernes: 9:00 AM - 6:00 PM Sábados:
+                            9:00 AM - 2:00 PM Domingos y festivos: Cerrado
                         </p>
-                        <strong>
+                        <strong className=" sm:text-2xl text-lg text-black">
                             Gracias por confiar en nosotros. Tu satisfacción es
                             nuestra prioridad.
                         </strong>
@@ -158,7 +166,7 @@ const ContactoSoporte = () => {
                 <div
                     className={`${
                         isNearScreen && "show-right delay-400"
-                    } min-h-[250px]  w-[100%] h-full flex justify-center items-center relative`}
+                    } min-h-[250px]  w-[100%]  h-full flex justify-center items-center relative`}
                 >
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.9025592612775!2d-65.2040922237187!3d-26.811231088972857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c25472e83dd%3A0x56e533bf54e671d8!2sIldefonso%20de%20las%20Mu%C3%B1ecas%201431%2C%20T4001JTK%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n!5e0!3m2!1ses!2sar!4v1721344420126!5m2!1ses!2sar&maptype=satellite&controls=0"

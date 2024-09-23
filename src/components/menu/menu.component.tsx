@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Facebook from "../svg/icons/facebook.svg";
-import Instagram from "../svg/icons/instagram.svg";
 import Whatsapp from "../svg/icons/whatsapp.svg";
 
 import UseScrollDirection from "@/app/hooks/useScrollDirection";
@@ -16,7 +14,7 @@ const MenuComponent = () => {
 
     return (
         <ul
-            className={`example-2 h-svh fixed  z-[9999]  top-0 opacity-0 right-0  show-menu   py-2 transition-all duration-700 ${
+            className={`example-2 h-svh fixed  z-[999]  top-0 opacity-0 right-0  show-menu   py-2 transition-all duration-700 ${
                 scrollDirection === "down"
                     ? " translate-x-[300%]"
                     : " translate-x-[0px]"

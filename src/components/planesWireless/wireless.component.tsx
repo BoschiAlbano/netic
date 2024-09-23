@@ -26,21 +26,18 @@ const WirelessComponent = () => {
                 <div className=" w-[100%] sm:w-[60%]  h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
                     <TitleComponent
                         strong="Internet"
-                        span="Wireless"
-                        h1="¡Navega a toda velocidad! Disfruta 10MB de Internet Wireless sin interrupciones."
+                        span="Fibra Optica"
+                        h1="¡Navega a toda velocidad!"
                     />
                     <p
                         className={` ${
                             isNearScreen && "show-right delay-500"
                         } sm:text-xl text-sm font-medium mx-auto  leading-relaxed text-gray-500 text-center`}
                     >
-                        El internet Wi-Fi wireless proporciona movilidad y
-                        flexibilidad al permitir la conexión de múltiples
-                        dispositivos sin cables. Su instalación es sencilla,
-                        mejora la estética al eliminar desorden, y es compatible
-                        con la mayoría de los dispositivos modernos. En resumen,
-                        ofrece comodidad y libertad de movimiento en el acceso a
-                        internet.
+                        Cuanto mayor sea la velocidad en MEGAS, mejor será la
+                        experiencia en el uso simultáneo de múltiples
+                        dispositivos. Elige el plan que mejor se adapte a tus
+                        necesidades para disfrutar de un rendimiento óptimo.
                     </p>
                     <BotonesComponent page="/contratar" texto="Contratar" />
                 </div>

@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import Link from "next/link";
 import TitleComponent from "../titles/title.component";
 import SvgLazo from "../svg/icons/lazo.svg";
 import SvgPuntos from "../svg/puntos.svg";
+import CalentarioSvg from "../svg/icons/calendario.svg";
+import EyeComponent from "../svg/icons/eye.svg";
 
 interface tarjeta {
     plan: string;
@@ -12,6 +14,7 @@ interface tarjeta {
     c2: string;
     c3: string;
     c4: string;
+    info: string;
     scale: boolean;
     index: number | null;
 }
@@ -19,7 +22,8 @@ interface tarjeta {
 const tarjeta: tarjeta[] = [
     {
         plan: "30",
-        c1: "Navegá sin limites",
+        info: "Recomendado para familias pequeñas o para quienes tienen un uso moderado de internet. Con este plan, puedes conectar de 3 a 4 teléfonos celulares y un televisor. Es adecuado para streaming en alta definición y navegación simultánea en múltiples dispositivos.",
+        c1: "Navega sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
@@ -28,7 +32,8 @@ const tarjeta: tarjeta[] = [
     },
     {
         plan: "50",
-        c1: "Navegá sin limites",
+        info: "Recomendado para familias pequeñas o para quienes tienen un uso moderado de internet. Con este plan, puedes conectar de 3 a 4 teléfonos celulares y un televisor. Es adecuado para streaming en alta definición y navegación simultánea en múltiples dispositivos.",
+        c1: "Navega sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
@@ -37,7 +42,8 @@ const tarjeta: tarjeta[] = [
     },
     {
         plan: "100",
-        c1: "Navegá sin limites",
+        info: "Perfecto para hogares con alta demanda de internet o para aquellos que utilizan varios dispositivos al mismo tiempo. Este plan puede soportar hasta 5 teléfonos celulares, dos televisores, o una combinación de un televisor y una consola de juegos o computadora. Proporciona una experiencia fluida incluso durante el uso intensivo de internet, como streaming en 4K, juegos en línea y descargas rápidas.",
+        c1: "Navega sin limites",
         c2: "Streaming sin interrupciones",
         c3: "Jugá en linea sin fluctuaciones",
         c4: "hasta 200Mbps de bajada",
@@ -72,6 +78,7 @@ const TarjetaPlanesComponent = () => {
                                 c3={item.c3}
                                 c4={item.c4}
                                 scale={item.scale}
+                                info={item.info}
                                 index={index}
                             />
                         );
@@ -83,12 +90,14 @@ const TarjetaPlanesComponent = () => {
 };
 export default TarjetaPlanesComponent;
 
-function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
+function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
     const { elementRef: refScreeenCar1, isNearScreen: isNearScreenCar1 } =
         useNerScreen({
             distance: "0px",
             once: true,
         });
+
+    const [modal, setmodal] = useState<boolean>(false);
 
     if (scale) {
         return (
@@ -120,6 +129,23 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
                         <button>Contratar</button>
                     </Link>
                 </div>
+
+                <div
+                    className={`absolute px-4 py-8 z-10  top-0 left-0 w-full h-full flex flex-col justify-start items-start  transition-all duration-300 opacity-0 ${
+                        modal ? "opacity-100 z-10 " : "opacity-0 z-[-1] "
+                    } rounded-[10px] p-[20px] text-white`}
+                    id="modalProfessional"
+                >
+                    <p className="leading-relaxed text-left">{info}</p>
+                </div>
+
+                <div
+                    className=" absolute z-20 top-0 left-[-1px] py-2 pl-3 pr-6 cursor-pointer rounded-br-[100%] rounded-tl-[9px] text-white"
+                    onMouseEnter={() => setmodal(true)}
+                    onMouseLeave={() => setmodal(false)}
+                >
+                    <EyeComponent className="" />
+                </div>
             </div>
         );
     }
@@ -133,15 +159,22 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
         >
             {index === 2 && (
                 <img
-                    className="absolute sm:top-[-75px] sm:right-[-75px] sm:w-[150px] w-[70px] top-[-30px] right-[-30px]  rotate-[30deg] aspect-square object-contain  "
+                    className="absolute z-30 sm:top-[-75px] sm:right-[-75px] sm:w-[150px] w-[70px] top-[-30px] right-[-30px]  rotate-[30deg] aspect-square object-contain  "
                     src="wifi.webp"
                     loading="lazy"
                     alt="imagen wifi"
                 />
             )}
             {index === 0 && (
+                // <img
+                //     className="sm:hidden  z-30 absolute w-[70px] top-[-30px] left-[-30px]  rotate-[-30deg] aspect-square object-contain "
+                //     src="wifi.webp"
+                //     loading="lazy"
+                //     alt="imagen wifi"
+                // />
+
                 <img
-                    className="sm:hidden absolute w-[70px] top-[-30px] left-[-30px]  rotate-[-30deg] aspect-square object-contain "
+                    className="absolute sm:hidden  z-30 sm:top-[-75px] sm:right-[-75px] sm:w-[150px] w-[70px] top-[-30px] right-[-30px]  rotate-[30deg] aspect-square object-contain  "
                     src="wifi.webp"
                     loading="lazy"
                     alt="imagen wifi"
@@ -168,6 +201,22 @@ function Tarjeta({ plan, c1, c2, c3, c4, scale, index }: tarjeta) {
                 <Link href={"/contratar"}>
                     <button>Contratar</button>
                 </Link>
+            </div>
+
+            <div
+                className={`absolute px-4 py-8  top-0 left-0 w-full h-full flex flex-col justify-start items-start bg-white transition-all duration-300 opacity-0  ${
+                    modal ? "opacity-100 z-10 " : "opacity-0 z-[-1] "
+                } rounded-[10px] p-[20px]`}
+            >
+                <p className="leading-relaxed text-left">{info}</p>
+            </div>
+
+            <div
+                className=" absolute z-20 top-0 left-0 py-2 pl-3 pr-6 cursor-pointer  rounded-br-[100%] rounded-tl-[10px] text-[var(--Color1)] "
+                onMouseEnter={() => setmodal(true)}
+                onMouseLeave={() => setmodal(false)}
+            >
+                <EyeComponent className="" />
             </div>
         </div>
     );

@@ -38,7 +38,7 @@ const Accordion = ({ title = "", answer = "" }) => {
                 }  space-y-1 px-4 `}
             >
                 <div
-                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-black  hover:text-gray-700 sm:text-lg text-sm ${
+                    className={`overflow-hidden  px-4 sm:py-2 py-1 rounded-lg font-medium text-gray-600  hover:text-gray-700  leading-relaxed  sm:text-xl text-sm ${
                         accordionOpen ? "block" : ""
                     }`}
                 >

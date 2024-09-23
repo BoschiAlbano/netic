@@ -45,7 +45,7 @@ const RadioButoonComponent = () => {
                 </div>
             </div>
 
-            <div className="radio-button">
+            {/* <div className="radio-button">
                 <input
                     type="radio"
                     className="radio-button__input"
@@ -57,7 +57,7 @@ const RadioButoonComponent = () => {
                     <span className="radio-button__custom"></span>
                     Wireless
                 </label>
-            </div>
+            </div> */}
             {/* <div className="radio-button">
                 <input
                     type="radio"

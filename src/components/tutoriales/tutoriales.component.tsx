@@ -51,7 +51,7 @@ const TutorialesComponent2 = () => {
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={10}
-                    autoplay={true}
+                    autoplay={false}
                     // autoHeight={true}
                     breakpoints={{
                         640: {

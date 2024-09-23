@@ -28,12 +28,12 @@ const FibraOpticaComponent = () => {
                             alt=""
                             loading="lazy"
                             className={`${
-                                isNearScreen && "show-left delay-150"
+                                isNearScreen && "show-left delay-200"
                             } object-cover w-[100%] rounded-[0.5rem] `}
                         />
                         <div
                             className={`${
-                                isNearScreen && "show-right delay-200"
+                                isNearScreen && "show-right delay-500"
                             }  flex flex-row absolute shadow-md  top-[15%] sm:right-[0%] sm:translate-x-[75%] translate-x-[60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2`}
                         >
                             {/* <Whatsapp width={"30px"} height={"30px"} /> */}
@@ -48,13 +48,13 @@ const FibraOpticaComponent = () => {
                             alt=""
                             loading="lazy"
                             className={`${
-                                isNearScreen && "show-right delay-300"
+                                isNearScreen && "show-right delay-700"
                             }  object-cover w-[100%] rounded-[0.5rem]`}
                         />
 
                         <div
                             className={`${
-                                isNearScreen && "show-left delay-400"
+                                isNearScreen && "show-left delay-1000"
                             } flex flex-row-reverse absolute shadow-md  bottom-[15%] left-[0%] sm:translate-x-[-75%] translate-x-[-60%] bg-[#F6F6FD] justify-center items-center rounded-[0.5rem] p-2 gap-2`}
                         >
                             {/* <Whatsapp width={"30px"} height={"30px"} /> */}
@@ -69,8 +69,8 @@ const FibraOpticaComponent = () => {
                     <TitleComponent strong="Fibra" span="Optica" h1="" />
                     <p
                         className={` ${
-                            isNearScreen && "show-right delay-500"
-                        } sm:text-xl text-sm font-medium mx-auto  leading-relaxed text-gray-500 text-center`}
+                            isNearScreen && "show-right delay-[1500ms]"
+                        } sm:text-xl text-sm font-medium mx-auto  leading-relaxed text-gray-500 text-center `}
                     >
                         La fibra óptica ofrece una conexión a internet de alta
                         velocidad, con una capacidad de transmisión superior y

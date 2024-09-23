@@ -1,22 +1,20 @@
 "use client";
 
 import Preguntas from "../components/banners/preguntas.component";
-import BotonesComponent from "../components/buttons/button.component";
 import Planes from "../components/tarjetas/planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
 import FibraOpticaComponent from "@/components/fibraOptica/fibraOptica.component";
 import WirelessComponent from "@/components/planesWireless/wireless.component";
 import useNerScreen from "./hooks/useNerScreen";
-import React, { Suspense } from "react";
+import React from "react";
 import LetterComponet from "@/components/letter/letter.componet";
 import MenuComponent from "@/components/menu/menu.component";
 import Header from "@/components/header/header";
-import TutorialesComponent2 from "../components/tutoriales/tutoriales.component";
-import SvgLazo from "@/components/svg/icons/lazo.svg";
+import Link from "next/link";
 
-const TutorialesComponent = React.lazy(
-    () => import("../components/tutoriales/tutoriales.component")
-);
+// const TutorialesComponent = React.lazy(
+//     () => import("../components/tutoriales/tutoriales.component")
+// );
 
 export default function Home() {
     const { elementRef, isNearScreen } = useNerScreen();
@@ -44,11 +42,19 @@ export default function Home() {
                                     servicios de internet (ISP) de confianza.
                                 </h1>
                                 <div className=" w-full flex justify-start items-center">
-                                    <BotonesComponent
+                                    {/* <BotonesComponent
                                         texto="Conocé más"
                                         page="/empresa"
                                         active={true}
-                                    />
+                                    /> */}
+
+                                    <Link
+                                        href="/empresa"
+                                        className=" bg-[var(--Color1)] text-white sm:text-xl text-sm sm:py-3 sm:px-6 py-2 px-4 rounded-[50px] font-semibold hover:bg-[#4C3F85]"
+                                        id="button"
+                                    >
+                                        Conocé más
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -1,13 +1,9 @@
 import React from "react";
-import Whatsapp from "../svg/icons/whatsapp.svg";
-import Instagram from "../svg/icons/instagram.svg";
-import Facebook from "../svg/icons/facebook.svg";
-import Link from "next/link";
 
 const Footer = () => {
     return (
         <footer className="bg-[#f6f6fd] sm:mt-20 mt-0">
-            <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+            <div className="relative mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
                 <div className="lg:flex lg:items-end lg:justify-between">
                     <div>
                         <div className="flex justify-center text-teal-600 lg:justify-start">
@@ -18,7 +14,7 @@ const Footer = () => {
                             />
                         </div>
 
-                        <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
+                        <p className="mx-auto sm:text-xl text-sm mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left">
                             ¡Solicita tu plan hoy mismo y conéctate al futuro!
                             Síguenos en nuestras redes sociales para estar al
                             día con nuestras últimas novedades y promociones.
