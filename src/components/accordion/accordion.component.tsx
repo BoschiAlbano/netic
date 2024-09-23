@@ -5,12 +5,14 @@ const Accordion = ({ title = "", answer = "" }) => {
     const [accordionOpen, setAccordionOpen] = useState(false);
 
     return (
-        <div className="py-0">
+        <div className="py-0  sm:my-3 my-2 rounded-[10px] sm:shadow-md shadow-lg ">
             <button
                 onClick={() => setAccordionOpen(!accordionOpen)}
                 className="flex justify-between w-full  cursor-pointer items-center rounded-lg px-2 sm:py-2 py-1 text-black  hover:text-gray-700"
             >
-                <span className="sm:text-2xl text-md font-medium">{title}</span>
+                <span className="sm:text-xl text-sm font-semibold">
+                    {title}
+                </span>
                 <span
                     className={`shrink-0 transition duration-300 ${
                         accordionOpen ? "-rotate-180" : "rotate-0"

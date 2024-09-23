@@ -46,7 +46,7 @@ const PreguntasComponet = () => {
                     span="Frecuentes"
                     strong="Preguntas"
                 />
-                <div className="sm:w-[70%] w-[100%]   flex flex-col justify-start items-center mt-10 mb-4  ">
+                <div className="sm:w-[80%] w-[95%]   flex flex-col justify-start items-center mt-10 mb-4  ">
                     {preguntas.map((item, index) => {
                         return (
                             <Accordion

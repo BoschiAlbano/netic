@@ -90,10 +90,10 @@ export default function Home() {
                     <section className="curved"></section>
                 </div>
 
-                <div className="  w-full grid place-items-center relative py-10 ">
+                <div className="  w-full grid place-items-center relative pt-10 ">
                     <MapaComponent />
                 </div>
-                <div className="  w-full grid place-items-center py-10 relative">
+                <div className="  w-full grid place-items-center  relative pb-10">
                     <Preguntas />
                 </div>
             </main>

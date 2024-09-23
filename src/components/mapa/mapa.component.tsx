@@ -64,30 +64,34 @@ const ContactoSoporte = () => {
     return (
         <section
             ref={elementRef}
-            className={`  relative z-30  w-full h-full grid place-items-center  `}
+            className={`  relative z-30  w-full h-full grid place-items-center sm:gap-20 gap-10  `}
         >
             <SvgPuntos className=" sm:w-[10%] w-[25%]  absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
 
+            <TitleComponent
+                strong="Contacto "
+                span="& Soporte"
+                h1="Nuestros asesores pueden ayudarte"
+            />
             <div className="sm:w-[75%]  w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
                 <div className=" h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
-                    <TitleComponent
-                        strong="Contacto "
-                        span="& Soporte"
-                        h1="Nuestros asesores pueden ayudarte"
-                    />
-
                     <div
                         className={` ${
                             isNearScreen && "show-left delay-500"
                         } h-full flex flex-col justify-center items-center sm:gap-10 gap-5 text-gray-600`}
                     >
-                        <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
-                            <strong className=" text-black sm:text-2xl text-lg">
+                        <span className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4 ">
+                            <p className=" absolute top-0 right-0 p-4 text-green-300">
+                                ✔
+                            </p>
+                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
                                 Soporte Técnico
-                            </strong>{" "}
-                            <br /> Para soporte técnico relacionado con nuestros
-                            productos o servicios, puedes enviarnos un correo
-                            electrónico o a través de whatsApp.
+                            </p>
+                            <p>
+                                Para soporte técnico relacionado con nuestros
+                                productos o servicios, puedes enviarnos un
+                                correo electrónico o a través de whatsApp.
+                            </p>
                             <ul>
                                 <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
                                     <PhoneSvg width={"20px"} />
@@ -105,13 +109,18 @@ const ContactoSoporte = () => {
                                 </li>
                             </ul>
                         </span>
-                        <span className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed ">
-                            <strong className=" sm:text-2xl text-lg text-black">
+                        <span className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                            <p className=" absolute top-0 right-0 p-4 text-green-300">
+                                ✔
+                            </p>
+                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
                                 Consultas Generales
-                            </strong>{" "}
-                            <br /> Para cualquier otra consulta, ya sea sobre
-                            nuestros servicios, cobranzas, ventas o información
-                            adicional, contáctanos a través de{" "}
+                            </p>
+                            <p>
+                                Para cualquier otra consulta, ya sea sobre
+                                nuestros servicios, cobranzas, ventas o
+                                información adicional, contáctanos a través de
+                            </p>
                             <ul>
                                 <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
                                     <SendSvg width={"30px"} />
@@ -135,11 +144,14 @@ const ContactoSoporte = () => {
                                 cobranzas@neticcomunicaciones.com.ar
                             </strong> */}
                         </span>
-                        <p className=" sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed">
-                            <strong className=" sm:text-2xl text-lg text-black">
+                        <div className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                            <p className=" absolute top-0 right-0 p-4 text-green-300">
+                                ✔
+                            </p>
+                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
                                 Formulario de Contacto
-                            </strong>{" "}
-                            <br /> También puedes usar nuestro{" "}
+                            </p>
+                            <p>También puedes usar nuestro</p>
                             <a
                                 className=" text-[var(--Color1)] font-semibold underline"
                                 href="/contratar"
@@ -148,18 +160,19 @@ const ContactoSoporte = () => {
                                 formulario de contacto
                             </a>
                             , y te responderemos lo antes posible.
-                        </p>
-                        <p className=" sm:text-xl text-sm font-medium text-start">
-                            <strong className=" sm:text-2xl text-lg text-black">
+                        </div>
+                        <div className=" relative sm:text-xl text-sm font-medium text-start shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                            <p className=" absolute top-0 right-0 p-4 text-green-300">
+                                ✔
+                            </p>
+                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
                                 Horario de Atención
-                            </strong>{" "}
-                            <br /> Lunes a Viernes: 9:00 AM - 6:00 PM Sábados:
-                            9:00 AM - 2:00 PM Domingos y festivos: Cerrado
-                        </p>
-                        <strong className=" sm:text-2xl text-lg text-black">
-                            Gracias por confiar en nosotros. Tu satisfacción es
-                            nuestra prioridad.
-                        </strong>
+                            </p>
+                            <p>
+                                Lunes a Viernes: 9:00 AM - 6:00 PM Sábados: 9:00
+                                AM - 2:00 PM Domingos y festivos: Cerrado
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -177,6 +190,10 @@ const ContactoSoporte = () => {
                     ></iframe>
                 </div>
             </div>
+            <p className=" sm:text-2xl text-sm text-black font-semibold w-[90%] text-center">
+                Gracias por confiar en nosotros. Tu satisfacción es nuestra
+                prioridad.
+            </p>
         </section>
     );
 };
