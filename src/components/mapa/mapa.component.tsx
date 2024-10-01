@@ -64,7 +64,7 @@ const ContactoSoporte = () => {
     return (
         <section
             ref={elementRef}
-            className={`  relative z-30  w-full h-full grid place-items-center sm:gap-20 gap-10  `}
+            className={`  relative z-30  w-full h-full grid place-items-center sm:gap-20 gap-10 `}
         >
             <SvgPuntos className=" sm:w-[10%] w-[25%]  absolute left-0 sm:translate-x-[25%] translate-x-[-15%]  opacity-[.6] top-0 sm:translate-y-[-0%] translate-y-[-120%] fill-[#dbdbfd] rotate-[15deg]" />
 
@@ -73,110 +73,99 @@ const ContactoSoporte = () => {
                 span="& Soporte"
                 h1="Nuestros asesores pueden ayudarte"
             />
-            <div className="sm:w-[75%]  w-[90%]  grid sm:grid-cols-2 grid-cols-1 flex-col-reverse sm:gap-20 gap-10 text-center  relative">
-                <div className=" h-full flex flex-col justify-center items-center sm:gap-10 gap-5">
-                    <div
-                        className={` ${
-                            isNearScreen && "show-left delay-500"
-                        } h-full flex flex-col justify-center items-center sm:gap-10 gap-5 text-gray-600`}
-                    >
-                        <span className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4 ">
-                            <p className=" absolute top-0 right-0 p-4 text-green-300">
-                                ✔
-                            </p>
-                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
-                                Soporte Técnico
-                            </p>
-                            <p>
-                                Para soporte técnico relacionado con nuestros
-                                productos o servicios, puedes enviarnos un
-                                correo electrónico o a través de whatsApp.
-                            </p>
-                            <ul>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <PhoneSvg width={"20px"} />
-                                    <span>381-2221729</span>
-                                </li>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <PhoneSvg width={"20px"} />
-                                    <span>381-3032589</span>
-                                </li>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <SendSvg width={"30px"} />
-                                    <span>
-                                        areatecnica@neticcomunicaciones.com.ar
-                                    </span>
-                                </li>
-                            </ul>
-                        </span>
-                        <span className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
-                            <p className=" absolute top-0 right-0 p-4 text-green-300">
-                                ✔
-                            </p>
-                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
-                                Consultas Generales
-                            </p>
-                            <p>
-                                Para cualquier otra consulta, ya sea sobre
-                                nuestros servicios, cobranzas, ventas o
-                                información adicional, contáctanos a través de
-                            </p>
-                            <ul>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <SendSvg width={"30px"} />
-                                    <span>info@neticcomunicaciones.com.ar</span>
-                                </li>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <SendSvg width={"30px"} />
-                                    <span>
-                                        ventas@neticcomunicaciones.com.ar
-                                    </span>
-                                </li>
-                                <li className=" flex gap-2 items-center mx-auto  leading-relaxed">
-                                    <SendSvg width={"30px"} />
-                                    <span>
-                                        cobranzas@neticcomunicaciones.com.ar
-                                    </span>
-                                </li>
-                            </ul>
-                            {/* <strong>
+            <div className="sm:w-[75%]  w-[90%] flex-col-reverse sm:gap-10 gap-5 text-center  relative grilla-mapa">
+                <span className="relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4 ">
+                    <p className=" absolute top-0 right-0 p-4 text-green-300">
+                        ✔
+                    </p>
+                    <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
+                        Soporte Técnico
+                    </p>
+                    <p>
+                        Para soporte técnico relacionado con nuestros productos
+                        o servicios, puedes enviarnos un correo electrónico o a
+                        través de whatsApp.
+                    </p>
+                    <ul className=" mt-2 sm:mt-3">
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <div className=" w-[30px] h-[30px] flex justify-center items-center">
+                                <PhoneSvg width={"20px"} />
+                            </div>
+                            <span>381-3032589</span>
+                        </li>
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <SendSvg width={"30px"} />
+                            <span>areatecnica@neticcomunicaciones.com.ar</span>
+                        </li>
+                    </ul>
+                </span>
+                <span className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                    <p className=" absolute top-0 right-0 p-4 text-green-300">
+                        ✔
+                    </p>
+                    <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
+                        Consultas Generales
+                    </p>
+                    <p>
+                        Para cualquier otra consulta, ya sea sobre nuestros
+                        servicios, cobranzas, ventas o información adicional,
+                        contáctanos a través de whatsApp o correo electrónico.
+                    </p>
+                    <ul className=" mt-2 sm:mt-3">
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <div className=" w-[30px] h-[30px] flex justify-center items-center">
+                                <PhoneSvg width={"20px"} />
+                            </div>
+                            <span>381-2221729</span>
+                        </li>
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <SendSvg width={"30px"} />
+                            <span>info@neticcomunicaciones.com.ar</span>
+                        </li>
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <SendSvg width={"30px"} />
+                            <span>ventas@neticcomunicaciones.com.ar</span>
+                        </li>
+                        <li className=" flex gap-2 items-center my-[2px] mx-auto  leading-relaxed">
+                            <SendSvg width={"30px"} />
+                            <span>cobranzas@neticcomunicaciones.com.ar</span>
+                        </li>
+                    </ul>
+                    {/* <strong>
                                 ventas@neticcomunicaciones.com.ar ñññ
                                 cobranzas@neticcomunicaciones.com.ar
                             </strong> */}
-                        </span>
-                        <div className=" relative sm:text-xl text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
-                            <p className=" absolute top-0 right-0 p-4 text-green-300">
-                                ✔
-                            </p>
-                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
-                                Formulario de Contacto
-                            </p>
-                            <p>También puedes usar nuestro</p>
-                            <a
-                                className=" text-[var(--Color1)] font-semibold underline"
-                                href="/contratar"
-                            >
-                                {" "}
-                                formulario de contacto
-                            </a>
-                            , y te responderemos lo antes posible.
-                        </div>
-                        <div className=" relative sm:text-xl text-sm font-medium text-start shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
-                            <p className=" absolute top-0 right-0 p-4 text-green-300">
-                                ✔
-                            </p>
-                            <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
-                                Horario de Atención
-                            </p>
-                            <p>
-                                Lunes a Viernes: 9:00 AM - 6:00 PM Sábados: 9:00
-                                AM - 2:00 PM Domingos y festivos: Cerrado
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div
+                </span>
+                <span className=" sm:text-xl relative text-sm font-medium text-start mx-auto  leading-relaxed shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                    <p className=" absolute top-0 right-0 p-4 text-green-300">
+                        ✔
+                    </p>
+                    <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
+                        Formulario de Contacto
+                    </p>
+                    <p>También puedes usar nuestro</p>
+                    <a
+                        className=" text-[var(--Color1)] font-semibold underline"
+                        href="/contratar"
+                    >
+                        {" "}
+                        formulario de contacto
+                    </a>
+                    , y te responderemos lo antes posible.
+                </span>
+                <span className=" relative sm:text-xl text-sm font-medium text-start shadow-lg bg-white rounded-[10px] sm:p-8 p-4">
+                    <p className=" absolute top-0 right-0 p-4 text-green-300">
+                        ✔
+                    </p>
+                    <p className=" text-black sm:text-2xl text-lg mb-4 font-semibold">
+                        Horario de Atención
+                    </p>
+                    <p>
+                        Lunes a Viernes: 9:00 AM - 6:00 PM Sábados: 9:00 AM -
+                        2:00 PM Domingos y festivos: Cerrado
+                    </p>
+                </span>
+                <span
                     className={`${
                         isNearScreen && "show-right delay-400"
                     } min-h-[250px]  w-[100%]  h-full flex justify-center items-center relative`}
@@ -188,12 +177,8 @@ const ContactoSoporte = () => {
                         loading="lazy"
                         className=" z-20 rounded-[5px]"
                     ></iframe>
-                </div>
+                </span>
             </div>
-            <p className=" sm:text-2xl text-sm text-black font-semibold w-[90%] text-center">
-                Gracias por confiar en nosotros. Tu satisfacción es nuestra
-                prioridad.
-            </p>
         </section>
     );
 };

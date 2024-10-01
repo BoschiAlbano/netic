@@ -59,7 +59,7 @@ const Board = ({ datos }: { datos: contratar[] }) => {
     };
 
     return (
-        <div className=" flex h-full w-auto gap-3  justify-center items-start p-12 ">
+        <div className=" admin-grilla-clientes h-full w-auto gap-3   p-2 ">
             <Column
                 title="Nuevos"
                 Column="Nuevo"
@@ -74,7 +74,7 @@ const Board = ({ datos }: { datos: contratar[] }) => {
                 cards={cards}
                 setCards={setCards}
             />
-            <div className=" flex flex-col gap-5">
+            <div className=" flex flex-col items-center gap-5">
                 <BurnBarrel setCards={setCards} />
                 <button
                     className=" text-black px-4 py-2 rounded-[5px] bg-[var(--Color4)]"
@@ -211,7 +211,7 @@ const Column = ({
     );
 
     return (
-        <div className=" column-draw shrink-0 overflow-auto h-[500px] w-[500px]">
+        <div className=" column-draw shrink-0 overflow-auto min-h-[50px] w-auto">
             <div className="mb-3 flex items-center justify-between">
                 <h3 className={`font-medium ${headingColor}`}>{title}</h3>
                 <span className="rounded text-sm text-neutral-400">
@@ -248,14 +248,14 @@ type CardProps = CardType & {
 
 const Card = ({
     Nombre,
-    Calle,
-    Casa,
     DNI,
     Eliminado,
-    Numero,
     Plan,
     Telefono,
     id,
+    Barrio,
+    Domicilio,
+    Mail,
     Column,
     handleDragStart,
 }: CardProps) => {
@@ -265,7 +265,7 @@ const Card = ({
     };
 
     return (
-        <>
+        <section className=" w-full">
             <DropIndicator beforeId={id} Column={Column} />
             {/* <div
                 draggable="true"
@@ -285,10 +285,8 @@ const Card = ({
                 <div className="notiborderglow"></div>
                 <div className="notititle">{Nombre}</div>
                 <div className="notibody">Tel: {Telefono}</div>
-                <div className="notibody">
-                    Dir: {Calle} {Numero} {Casa}
-                </div>
-                <div className="notibody">DNI: {DNI}</div>
+                <div className="notibody">Dir: {Domicilio}</div>
+                <div className="notibody">Dni: {DNI}</div>
                 <div className="notibody">Plan: {Plan}</div>
 
                 <div className=" absolute top-0 right-0 w-[25px] h-[25px] z-50 m-2">
@@ -304,7 +302,7 @@ const Card = ({
                     />
                 </div>
             </div>
-        </>
+        </section>
     );
 };
 
@@ -378,9 +376,9 @@ type CardType = {
     Nombre: string;
     DNI: string;
     Telefono: string;
-    Calle: string;
-    Numero: number;
-    Casa: string | null;
+    Domicilio: string;
+    Barrio: string;
+    Mail: string;
     Plan: number;
     Eliminado: boolean | null;
 };

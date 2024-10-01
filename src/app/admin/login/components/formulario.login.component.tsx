@@ -58,14 +58,14 @@ const FormularioLoginComponent = () => {
             onSubmit={(e) => {
                 handleSubmit(e);
             }}
-            className={`bg-gradient-to-b from-[#dde1ff] via-[#c3c6ff] to-[#9ea1ff] flex flex-col justify-between items-center p-5 absolute bottom-0 w-full opacity-[1] h-[45%] rounded-t-lg ${
+            className={`bg-gray-100 flex flex-col justify-between items-center p-5 absolute bottom-0 w-full opacity-[1] h-[45%] rounded-t-lg ${
                 isUp ? "showDown" : "showUp"
             }`}
         >
-            <div className=" z-20 w-[100%] top-[-70%] left-0 absolute flex flex-col justify-center items-center">
+            <div className=" z-20 w-[100%] top-[-150px] left-0 absolute flex flex-col justify-end items-center">
                 <img
-                    className=" w-[90%] object-contain"
-                    src="/logo.png"
+                    className=" w-[50%] object-contain"
+                    src="/logoBlanco.png"
                     alt=""
                     loading="lazy"
                 />
@@ -74,7 +74,7 @@ const FormularioLoginComponent = () => {
             <button
                 type="button"
                 onClick={() => setisUp(!isUp)}
-                className=" absolute top-[-38px] bg-[#dde1ff]  w-[80px] h-[40px] rounded-t-full text-center flex justify-center items-center "
+                className=" absolute top-[-38px] bg-gray-100 w-[80px] h-[40px] rounded-t-full text-center flex justify-center items-center "
             >
                 <p className={`w-[35px] ${!isUp && "mover"}`}>
                     <ArrowDown

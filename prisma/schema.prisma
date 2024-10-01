@@ -20,9 +20,9 @@ model contratar {
   Nombre String
   DNI String
   Telefono String
-  Calle String
-  Numero Int
-  Casa String?
+  Domicilio String
+  Barrio String
+  Mail String
   Plan Int
   Column String @default("Nuevo")
   Eliminado Boolean? @default(false)

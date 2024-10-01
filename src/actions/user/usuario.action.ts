@@ -84,9 +84,9 @@ interface CardType {
     Nombre: string;
     DNI: string;
     Telefono: string;
-    Calle: string;
-    Numero: number;
-    Casa: string | null;
+    Domicilio: string;
+    Barrio: string;
+    Mail: string;
     Plan: number;
     Eliminado: boolean | null;
 }

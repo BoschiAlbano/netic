@@ -106,6 +106,7 @@ function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
                 className={`box  ${
                     isNearScreenCar1 ? "efecto-show-professional" : "opacity-0"
                 }`}
+                onMouseLeave={() => setmodal(false)}
             >
                 <div>
                     <p className="title">PLAN</p>
@@ -124,9 +125,14 @@ function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
                 </div>
 
                 <div className="button">
-                    <Link href={"/contratar"}>
-                        <button>Contratar</button>
-                    </Link>
+                    {/* <Link href={"/contratar"}> */}
+                    <button
+                        onMouseEnter={() => setmodal(true)}
+                        className="cursor-default"
+                    >
+                        Información
+                    </button>
+                    {/* </Link> */}
                 </div>
 
                 <div
@@ -134,17 +140,18 @@ function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
                         modal ? "opacity-100 z-10 " : "opacity-0 z-[-1] "
                     } rounded-[10px] p-[20px] text-white`}
                     id="modalProfessional"
+                    // onMouseEnter={() => setmodal(true)}
                 >
                     <p className="leading-relaxed text-left">{info}</p>
                 </div>
 
-                <div
+                {/* <div
                     className=" absolute z-20 top-0 left-[-1px] py-2 pl-3 pr-6 cursor-pointer rounded-br-[100%] rounded-tl-[9px] text-white"
                     onMouseEnter={() => setmodal(true)}
                     onMouseLeave={() => setmodal(false)}
                 >
                     <EyeComponent className="" />
-                </div>
+                </div> */}
             </div>
         );
     }
@@ -155,6 +162,7 @@ function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
             className={`box relative ${
                 isNearScreenCar1 ? "efecto-show" : "opacity-0"
             } shadow-header`}
+            onMouseLeave={() => setmodal(false)}
         >
             {index === 2 && (
                 <img
@@ -197,26 +205,33 @@ function Tarjeta({ plan, c1, scale, index, c2, c3, c4, info }: tarjeta) {
             </div>
 
             <div className="button">
-                <Link href={"/contratar"}>
-                    <button>Contratar</button>
-                </Link>
+                {/* <Link href={"/contratar"}> */}
+                <button
+                    onMouseEnter={() => setmodal(true)}
+                    className="cursor-default"
+                >
+                    Información
+                </button>
+                {/* </Link> */}
             </div>
 
             <div
                 className={`absolute px-4 py-8  top-0 left-0 w-full h-full flex flex-col justify-start items-start bg-white transition-all duration-300 opacity-0  ${
                     modal ? "opacity-100 z-10 " : "opacity-0 z-[-1] "
                 } rounded-[10px] p-[20px]`}
+                // onClick={() => setmodal(false)}
+                // onMouseEnter={() => setmodal(true)}
             >
                 <p className="leading-relaxed text-left">{info}</p>
             </div>
 
-            <div
+            {/* <div
                 className=" absolute z-20 top-0 left-0 py-2 pl-3 pr-6 cursor-pointer  rounded-br-[100%] rounded-tl-[10px] text-[var(--Color1)] "
                 onMouseEnter={() => setmodal(true)}
                 onMouseLeave={() => setmodal(false)}
             >
                 <EyeComponent className="" />
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -69,8 +69,11 @@ const FormularioSubmit = () => {
                     type="number"
                 />
             </div>
-            <InputComponent name="Calle" palabra="Calle" type="text" />
-            <div className="flex w-full gap-2">
+            <InputComponent name="Domicilio" palabra="Domicilio" type="text" />
+            <InputComponent name="Barrio" palabra="Barrio" type="text" />
+            <InputComponent name="Mail" palabra="Mail" type="text" />
+
+            {/* <div className="flex w-full gap-2">
                 <InputComponent name="Numero" palabra="Numero" type="number" />
                 <InputComponent
                     name="Casa"
@@ -78,7 +81,7 @@ const FormularioSubmit = () => {
                     type="text"
                     required={false}
                 />
-            </div>
+            </div> */}
             <RadioButoonComponent />
 
             <SubmitComponent />

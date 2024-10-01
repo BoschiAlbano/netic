@@ -17,19 +17,22 @@ const createContratarSchema = z.object({
     Telefono: z.coerce
         .number()
         .gt(0, { message: "El Campo Telefono debe ser un numero" }),
-    Calle: z
+    Domicilio: z
         .string({
             invalid_type_error: "Campo invalido",
         })
         .min(1, { message: "Complete el campo" }),
-    Numero: z.coerce
-        .number()
-        .gt(0, { message: "El Campo Numero debe ser un numero" }),
-    Casa: z
+    Barrio: z
         .string({
             invalid_type_error: "Campo invalido",
         })
-        .nullable(),
+        .min(1, { message: "Complete el campo" }),
+    Mail: z
+        .string({
+            invalid_type_error: "Campo invalido",
+        })
+        .min(1, { message: "Complete el campo" })
+        .email("El mail no es valido"),
     Plan: z.coerce
         .number()
         .gt(0, { message: "El Campo Pan debe ser un numero" }),

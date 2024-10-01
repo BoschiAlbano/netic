@@ -46,7 +46,7 @@ const MenuComponent = () => {
                     onClick={() =>
                         enviarPorWhatsApp({
                             msj: "mensaje predereminado",
-                            tel: "3816206925",
+                            tel: "3816522451",
                         })
                     }
                     className="tooltip"

@@ -15,9 +15,9 @@ const Page = async () => {
 
     return (
         <div
-            className={`w-full h-[100svh] min-h-full flex flex-col justify-center items-center gap-10 `}
+            className={`w-full h-[100svh] min-h-full flex flex-col justify-center items-center gap-10 bg-gray-800 `}
         >
-            <span className="absolute top-0 left-0 mx-4 my-2 text-[var(--Color1)] font-bold text-xl">
+            <span className="absolute top-0 left-0 mx-4 my-2 text-white font-bold text-xl">
                 Register
             </span>
 
