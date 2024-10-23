@@ -4,7 +4,7 @@ import React from "react";
 import Accordion from "../accordion/accordion.component";
 import useNerScreen from "@/app/hooks/useNerScreen";
 import TitleComponent from "../titles/title.component";
-import TutorialesComponent2 from "../tutoriales/tutoriales.component";
+// import TutorialesComponent2 from "../tutoriales/tutoriales.component";
 
 interface pregunta {
     title: string;
@@ -58,7 +58,7 @@ const PreguntasComponet = () => {
                     })}
                 </div>
 
-                <TutorialesComponent2 />
+                {/* <TutorialesComponent2 /> */}
             </div>
         </section>
     );

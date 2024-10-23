@@ -1,4 +1,4 @@
-import Preguntas from "../components/banners/preguntas.component";
+// import Preguntas from "../components/banners/preguntas.component";
 import Planes from "../components/tarjetas/planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
 import FibraOpticaComponent from "@/components/fibraOptica/fibraOptica.component";
