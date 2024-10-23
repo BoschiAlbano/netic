@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Input from "@/components/Input/Input";
 import ArrowDown from "./arrowDown.svg";
 

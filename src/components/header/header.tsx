@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import UseScrollDirection from "@/app/hooks/useScrollDirection";
 import Footer from "../footer/footer";
 

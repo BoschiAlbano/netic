@@ -1,24 +1,19 @@
-"use client";
-
 import Preguntas from "../components/banners/preguntas.component";
 import Planes from "../components/tarjetas/planes.component";
 import MapaComponent from "@/components/mapa/mapa.component";
 import FibraOpticaComponent from "@/components/fibraOptica/fibraOptica.component";
 import WirelessComponent from "@/components/planesWireless/wireless.component";
-import useNerScreen from "./hooks/useNerScreen";
 import React from "react";
 import LetterComponet from "@/components/letter/letter.componet";
 import MenuComponent from "@/components/menu/menu.component";
 import Header from "@/components/header/header";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 // const TutorialesComponent = React.lazy(
 //     () => import("../components/tutoriales/tutoriales.component")
 // );
 
 export default function Home() {
-    const { elementRef, isNearScreen } = useNerScreen();
-
     return (
         <Header>
             <main
@@ -42,12 +37,6 @@ export default function Home() {
                                     servicios de internet (ISP) de confianza.
                                 </h1>
                                 <div className=" w-full flex justify-start items-center">
-                                    {/* <BotonesComponent
-                                        texto="Conocé más"
-                                        page="/empresa"
-                                        active={true}
-                                    /> */}
-
                                     <Link
                                         href="/empresa"
                                         className=" bg-[var(--Color1)] text-white sm:text-xl text-sm sm:py-3 sm:px-6 py-2 px-4 rounded-[50px] font-semibold hover:bg-[#4C3F85]"
@@ -62,7 +51,7 @@ export default function Home() {
                         <img
                             loading="lazy"
                             src="/banner.webp"
-                            alt=""
+                            alt="banner"
                             fetchPriority={"high"}
                             className=" w-[90%] sm:block hidden"
                         />
@@ -82,10 +71,7 @@ export default function Home() {
                     <Planes />
                 </div>
 
-                <div
-                    ref={elementRef}
-                    className=" w-full grid place-items-center relative py-10"
-                >
+                <div className=" w-full grid place-items-center relative py-10">
                     <WirelessComponent />
                     <section className="curved"></section>
                 </div>
@@ -93,9 +79,9 @@ export default function Home() {
                 <div className="  w-full grid place-items-center relative pt-10 ">
                     <MapaComponent />
                 </div>
-                <div className="  w-full grid place-items-center  relative pb-10">
+                {/* <div className="  w-full grid place-items-center  relative pb-10">
                     <Preguntas />
-                </div>
+                </div> */}
             </main>
         </Header>
     );

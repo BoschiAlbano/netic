@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import useNerScreen from "@/app/hooks/useNerScreen";
-import Link from "next/link";
 import TitleComponent from "../titles/title.component";
 import SvgLazo from "../svg/icons/lazo.svg";
 import SvgPuntos from "../svg/puntos.svg";
-import EyeComponent from "../svg/icons/eye.svg";
 
 interface tarjeta {
     plan: string;
